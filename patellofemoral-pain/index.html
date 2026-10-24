@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>髕骨痛與髕骨軌道｜膝蓋前側痛、有聲音怎麼看</title>
+<meta name="description" content="用白話與互動圖解看懂髕骨痛：膝蓋聲響、髕骨的拔河、大腿內轉、放鬆與強化的定位、下蹲模式、自我檢查與入門練習。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;600;700&family=Zilla+Slab:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDE6D6;
+    --paper-deep:#E2D9C4;
+    --ink:#26302A;
+    --ink-soft:#4B5750;
+    --villain:#A13D2C;
+    --villain-soft:#C97A67;
+    --hero:#3F6E4E;
+    --hero-soft:#7FA98A;
+    --gold:#B9852E;
+    --slate:#4A6670;
+    --card:#F6F1E6;
+    --rule:rgba(38,48,42,0.16);
+    --body-fill:#E4D8BF;
+    --bone:#F3EBD9;
+    --summary-bg:#26302A;
+    --summary-ink:#EDE6D6;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#1C211E;
+      --paper-deep:#252C28;
+      --ink:#ECE7DC;
+      --ink-soft:#A9B2AC;
+      --villain:#E08A73;
+      --villain-soft:#E08A73;
+      --hero:#8DBB9A;
+      --hero-soft:#5E8A6B;
+      --gold:#D9AE62;
+      --slate:#8FB0BB;
+      --card:#252C28;
+      --rule:rgba(236,231,220,0.16);
+      --body-fill:#323A35;
+      --bone:#454E48;
+      --summary-bg:#2E3832;
+      --summary-ink:#ECE7DC;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1C211E;
+    --paper-deep:#252C28;
+    --ink:#ECE7DC;
+    --ink-soft:#A9B2AC;
+    --villain:#E08A73;
+    --villain-soft:#E08A73;
+    --hero:#8DBB9A;
+    --hero-soft:#5E8A6B;
+    --gold:#D9AE62;
+    --slate:#8FB0BB;
+    --card:#252C28;
+    --rule:rgba(236,231,220,0.16);
+    --body-fill:#323A35;
+    --bone:#454E48;
+    --summary-bg:#2E3832;
+    --summary-ink:#ECE7DC;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Noto Sans TC',sans-serif;
+    font-size:16.5px;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+    -webkit-text-size-adjust:100%;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px;}
+  @media (min-width:640px){ .wrap{padding:0 24px;} }
+  .term{color:var(--ink-soft); font-size:.9em; font-weight:400;}
+
+  /* ---------- Hero ---------- */
+  header.hero{
+    background:
+      radial-gradient(ellipse at 80% -10%, rgba(63,110,78,0.12), transparent 55%),
+      radial-gradient(ellipse at 10% 0%, rgba(185,133,46,0.12), transparent 50%),
+      var(--paper);
+    padding:72px 0 40px;
+    border-bottom:1px solid var(--rule);
+  }
+  .eyebrow{
+    font-family:'Zilla Slab',serif; font-style:italic; font-weight:500;
+    letter-spacing:0.14em; text-transform:uppercase; font-size:13px; color:var(--hero);
+  }
+  h1{
+    font-family:'Noto Serif TC',serif; font-weight:900;
+    font-size:clamp(34px,6vw,54px); margin:10px 0 6px; letter-spacing:0.01em; line-height:1.25;
+  }
+  .subtitle{
+    font-family:'Noto Serif TC',serif; font-weight:500; font-size:19px;
+    color:var(--ink-soft); margin:0 0 28px;
+  }
+  .formula{
+    display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+    font-family:'Noto Serif TC',serif; font-weight:700; font-size:clamp(15px,2.6vw,17px);
+  }
+  .chip{ background:var(--card); border:1px solid var(--rule); border-radius:3px; padding:9px 14px; }
+  .chip.slate{border-color:rgba(74,102,112,0.45); color:var(--slate);}
+  .chip.hero{border-color:rgba(63,110,78,0.45); color:var(--hero);}
+  .chip.gold{border-color:rgba(185,133,46,0.5); color:var(--gold);}
+  .plus{color:var(--ink-soft); font-weight:500;}
+  .toc{display:flex; flex-wrap:wrap; gap:8px; margin-top:26px;}
+  .toc a{
+    font-size:14px; color:var(--ink-soft); text-decoration:none;
+    border:1px solid var(--rule); border-radius:999px; padding:6px 12px; min-height:36px;
+    display:inline-flex; align-items:center;
+  }
+  .toc a:hover{border-color:var(--hero); color:var(--hero);}
+
+  /* ---------- Section shell ---------- */
+  section{padding:56px 0; border-bottom:1px solid var(--rule);}
+  .sec-head{margin-bottom:28px;}
+  .sec-num{
+    font-family:'Zilla Slab',serif; font-style:italic; color:var(--villain);
+    font-size:14px; letter-spacing:0.1em;
+  }
+  h2{
+    font-family:'Noto Serif TC',serif; font-weight:900;
+    font-size:clamp(24px,4vw,32px); margin:4px 0 10px; line-height:1.35;
+  }
+  h3{font-family:'Noto Serif TC',serif; font-size:19px; margin:0 0 6px; line-height:1.45;}
+  p{margin:0 0 14px;}
+  p.lede{color:var(--ink-soft); font-size:16.5px; max-width:660px;}
+  .card{
+    background:var(--card); border:1px solid var(--rule); border-radius:6px; padding:20px 22px;
+  }
+  .callout{
+    background:rgba(161,61,44,0.08); border-left:3px solid var(--villain);
+    padding:12px 16px; border-radius:0 4px 4px 0; font-size:15.5px; margin-top:16px;
+  }
+  .callout.hero{background:rgba(63,110,78,0.10); border-left-color:var(--hero);}
+  .callout b{color:var(--villain);}
+  .callout.hero b{color:var(--hero);}
+
+  /* ---------- Interactive stage ---------- */
+  .lab{
+    background:var(--card); border:1px solid var(--rule); border-radius:8px;
+    padding:18px 16px 20px;
+  }
+  @media (min-width:640px){ .lab{padding:22px 24px 24px;} }
+  .lab-grid{display:grid; grid-template-columns:1fr; gap:18px; align-items:start;}
+  @media (min-width:760px){ .lab-grid{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);} }
+  .stage-box{position:relative;}
+  .stage-box .view-label{
+    position:absolute; top:4px; left:6px; font-size:13px; color:var(--ink-soft);
+    font-family:'Zilla Slab',serif; font-style:italic; letter-spacing:.06em;
+  }
+  svg{display:block; width:100%; height:auto;}
+
+  .modes{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;}
+  .mode-btn, .tog-btn{
+    font:inherit; font-size:16px; font-weight:600; cursor:pointer;
+    padding:8px 16px; min-height:44px; border-radius:999px;
+    border:1.5px solid var(--rule); background:transparent; color:var(--ink);
+  }
+  .mode-btn[aria-pressed="true"]{background:var(--hero); border-color:var(--hero); color:var(--paper);}
+  .mode-btn[data-mode="shrug"][aria-pressed="true"],
+  .mode-btn[data-mode="winging"][aria-pressed="true"]{background:var(--villain); border-color:var(--villain);}
+  .tog-btn[aria-pressed="true"]{background:var(--ink); border-color:var(--ink); color:var(--paper);}
+
+  .slider-wrap{margin:6px 0 4px;}
+  .slider-wrap label{display:flex; justify-content:space-between; align-items:baseline; font-weight:700; font-size:15px;}
+  .slider-wrap label output{font-family:'Zilla Slab',serif; font-size:26px; color:var(--ink);}
+  input[type=range]{width:100%; height:44px; accent-color:var(--hero); margin:0;}
+  .slider-ticks{display:flex; justify-content:space-between; font-size:12.5px; color:var(--ink-soft); margin-top:-6px;}
+  .play-row{display:flex; gap:10px; align-items:center; margin:12px 0 16px; flex-wrap:wrap;}
+  .play-btn{
+    font:inherit; font-size:15.5px; font-weight:700; cursor:pointer;
+    background:var(--ink); color:var(--paper); border:none; border-radius:999px;
+    padding:10px 18px; min-height:44px;
+  }
+  .phase{font-size:14.5px; color:var(--ink-soft);}
+  .phase b{color:var(--villain);}
+
+  .readout{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px;}
+  .read{
+    border:1px solid var(--rule); border-radius:6px; padding:10px 12px; background:var(--paper);
+  }
+  .read .k{font-size:13.5px; color:var(--ink-soft); line-height:1.4;}
+  .read .v{font-family:'Zilla Slab',serif; font-weight:700; font-size:30px; line-height:1.2;}
+  .read.gh .v{color:var(--slate);}
+  .read.st .v{color:var(--hero);}
+  .ratio-bar{display:flex; height:14px; border-radius:7px; overflow:hidden; background:var(--paper-deep); margin:4px 0 4px;}
+  .ratio-bar span{display:block; height:100%; transition:width .12s linear;}
+  .ratio-bar .gh{background:var(--slate);}
+  .ratio-bar .st{background:var(--hero);}
+  .ratio-text{font-size:13.5px; color:var(--ink-soft); margin-bottom:12px;}
+
+  .mode-note{
+    border-left:3px solid var(--hero); padding:8px 12px; font-size:15px;
+    background:rgba(63,110,78,0.08); border-radius:0 4px 4px 0;
+  }
+  .mode-note.fault{border-left-color:var(--villain); background:rgba(161,61,44,0.08);}
+  .mode-note b{display:block; margin-bottom:2px;}
+  .inset{margin-top:14px;}
+  .inset .cap{font-size:13px; color:var(--ink-soft); margin-top:2px; text-align:center;}
+  .fig-note{font-size:13px; color:var(--ink-soft); margin-top:14px; line-height:1.7;}
+
+  /* ---------- Generic grids ---------- */
+  .grid-3{display:grid; grid-template-columns:1fr; gap:14px;}
+  @media (min-width:760px){ .grid-3{grid-template-columns:1fr 1fr 1fr;} }
+  .grid-2{display:grid; grid-template-columns:1fr; gap:14px;}
+  @media (min-width:700px){ .grid-2{grid-template-columns:1fr 1fr;} }
+
+  .motion-card .tag{
+    display:inline-block; font-family:'Zilla Slab',serif; font-style:italic; font-size:12.5px;
+    letter-spacing:.06em; padding:2px 10px; border-radius:20px; margin-bottom:8px;
+    background:rgba(63,110,78,0.12); color:var(--hero);
+  }
+  .motion-card svg{max-width:180px; margin:4px auto 10px;}
+  .motion-card p{font-size:15.5px; margin:0;}
+  .motion-card .why{margin-top:8px; color:var(--ink-soft); font-size:14.5px;}
+
+  /* force couple */
+  .couple-grid{display:grid; grid-template-columns:1fr; gap:22px; align-items:start;}
+  @media (min-width:760px){ .couple-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);} }
+  .muscle-list{list-style:none; margin:0; padding:0;}
+  .muscle-list li{padding:12px 0; border-bottom:1px solid var(--rule);}
+  .muscle-list li:last-child{border-bottom:none;}
+  .muscle-list .mname{font-weight:700; font-size:17px;}
+  .muscle-list .mnum{
+    display:inline-flex; width:24px; height:24px; border-radius:50%; align-items:center; justify-content:center;
+    font-family:'Zilla Slab',serif; font-weight:700; font-size:13px; margin-right:8px;
+    color:var(--paper); background:var(--hero); vertical-align:2px;
+  }
+  .down .muscle-list .mnum{background:var(--slate);}
+  .muscle-list p{margin:2px 0 0; font-size:15px; color:var(--ink-soft);}
+
+  /* faults */
+  .fault-card h3{color:var(--villain);}
+  .fault-card dl{margin:10px 0 0; font-size:15px;}
+  .fault-card dt{font-weight:700; margin-top:8px;}
+  .fault-card dd{margin:0; color:var(--ink-soft);}
+  .fault-card ul{margin:2px 0 0; padding-left:20px; color:var(--ink-soft);}
+  .see-btn{
+    margin-top:14px; font:inherit; font-size:14.5px; font-weight:700; cursor:pointer;
+    color:var(--villain); background:none; border:1.5px solid var(--villain); border-radius:999px;
+    padding:6px 14px; min-height:40px;
+  }
+
+  /* eccentric */
+  .phase-compare{display:grid; grid-template-columns:1fr; gap:14px;}
+  @media (min-width:700px){ .phase-compare{grid-template-columns:1fr 1fr;} }
+  .phase-compare .card h3 small{font-family:'Noto Sans TC',sans-serif; font-weight:400; font-size:14px; color:var(--ink-soft);}
+
+  /* checks & drills */
+  .check-list{list-style:none; margin:0; padding:0; counter-reset:chk;}
+  .check-list > li{
+    counter-increment:chk; position:relative; padding:16px 0 16px 44px; border-bottom:1px solid var(--rule);
+  }
+  .check-list > li:last-child{border-bottom:none;}
+  .check-list > li::before{
+    content:counter(chk); position:absolute; left:0; top:17px;
+    width:30px; height:30px; border-radius:50%; background:var(--slate); color:var(--paper);
+    font-family:'Zilla Slab',serif; font-weight:700; display:flex; align-items:center; justify-content:center;
+  }
+  .check-list h4{font-family:'Noto Serif TC',serif; font-size:17.5px; margin:0 0 4px;}
+  .check-list p{margin:0; font-size:15.5px;}
+  .check-list ul{margin:6px 0 0; padding-left:20px; font-size:15.5px;}
+  .check-list ul li{margin-bottom:4px;}
+
+  .drill{
+    background:var(--card); border:1px solid var(--rule); border-left:6px solid var(--hero);
+    border-radius:4px; padding:20px 22px; margin-bottom:16px;
+  }
+  .drill .badge{
+    font-family:'Zilla Slab',serif; font-weight:700; font-size:12.5px; letter-spacing:.08em; color:var(--hero);
+  }
+  .drill h3{margin-top:2px;}
+  .cue{
+    font-family:'Noto Serif TC',serif; font-weight:700; font-size:18px;
+    background:rgba(185,133,46,0.12); color:var(--ink); border-radius:4px;
+    padding:10px 14px; margin:10px 0 12px;
+  }
+  .cue::before{content:'提示語　'; font-family:'Zilla Slab',serif; font-style:italic; font-size:13px; color:var(--gold); font-weight:700;}
+  .drill ol{margin:0 0 10px; padding-left:22px; font-size:15.5px;}
+  .drill ol li{margin-bottom:4px;}
+  .drill .meta{font-size:14.5px; color:var(--ink-soft); margin-bottom:8px;}
+  .drill .err{font-size:15px;}
+  .drill .err b{color:var(--villain);}
+  .drill .elder{font-size:15px; margin-top:8px;}
+  .drill .elder b{color:var(--slate);}
+
+  .big-mistake{
+    background:var(--card); border:2px solid var(--villain); border-radius:6px; padding:20px 22px; margin:26px 0;
+  }
+  .big-mistake .kicker{font-family:'Zilla Slab',serif; font-style:italic; font-weight:700; color:var(--villain); font-size:13px; letter-spacing:.06em;}
+  .big-mistake h3{margin:4px 0 8px;}
+  .big-mistake p{font-size:15.5px;}
+  .big-mistake p:last-child{margin-bottom:0;}
+
+  .pain-scale{display:grid; grid-template-columns:repeat(11,1fr); gap:3px; margin:12px 0 6px;}
+  .pain-scale span{
+    text-align:center; font-family:'Zilla Slab',serif; font-weight:700; font-size:14px;
+    padding:8px 0; border-radius:3px; color:#fff;
+  }
+  .pain-scale .ok{background:#5C8567;}
+  .pain-scale .warn{background:#B9852E;}
+  .pain-scale .stop{background:#A13D2C;}
+  .pain-legend{display:flex; justify-content:space-between; font-size:13px; color:var(--ink-soft); gap:8px;}
+  .red-flags{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 4px;}
+  .red-flags span{
+    border:1.5px solid var(--villain); color:var(--villain); border-radius:999px;
+    padding:4px 12px; font-weight:700; font-size:15px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{padding:50px 0 70px;}
+  .summary-card{ background:var(--summary-bg); color:var(--summary-ink); border-radius:8px; padding:30px 24px; }
+  @media (min-width:640px){ .summary-card{padding:34px 32px;} }
+  .summary-card .eyebrow{color:var(--hero-soft);}
+  .summary-card p{
+    font-family:'Noto Serif TC',serif; font-size:clamp(17px,2.6vw,20px); font-weight:500;
+    margin:10px 0 0; line-height:1.85;
+  }
+  .summary-card b{color:var(--gold);}
+  .disclaimer{font-size:14px; color:var(--ink-soft); margin-top:22px; line-height:1.8;}
+  .disclaimer b{color:var(--villain);}
+
+  ::selection{background:var(--gold); color:var(--paper);}
+  :focus-visible{outline:2px solid var(--slate); outline-offset:2px;}
+
+  /* ---------- Patellofemoral additions ---------- */
+  ul.plain{margin:6px 0 0; padding-left:20px; font-size:15.5px;}
+  ul.plain li{margin-bottom:6px;}
+  .tug{display:grid; grid-template-columns:1fr; gap:14px; align-items:center;}
+  @media (min-width:760px){ .tug{grid-template-columns:1fr 130px 1fr;} }
+  .tug-mid svg{max-width:130px; margin:0 auto;}
+  .tug-side .tag{
+    display:inline-block; font-weight:700; font-size:14px; padding:2px 12px; border-radius:20px; margin-bottom:6px;
+  }
+  .tug-side.in .tag{background:rgba(63,110,78,0.14); color:var(--hero);}
+  .tug-side.out .tag{background:rgba(161,61,44,0.12); color:var(--villain);}
+  .tug-side dl{margin:0; font-size:15px;}
+  .tug-side dt{font-weight:700; margin-top:10px;}
+  .tug-side dd{margin:2px 0 0; color:var(--ink-soft);}
+  .pair{display:grid; grid-template-columns:1fr 1.3fr; gap:10px; align-items:end;}
+  .pair .stage-box{padding-top:22px;}
+  .read .v.small{font-family:'Noto Sans TC',sans-serif; font-size:20px; color:var(--ink);}
+  .ratio-bar .bad{background:var(--villain);}
+  .side-box{
+    background:var(--card); border:1px dashed var(--slate); border-radius:6px; padding:20px 22px; font-size:15.5px;
+  }
+  .side-box .sb-kicker{font-family:'Zilla Slab',serif; font-style:italic; font-weight:700; color:var(--slate); font-size:13px; letter-spacing:.06em; margin-bottom:6px;}
+  .release-card p{font-size:15px; margin:0;}
+  .release-card .how{margin-top:8px; color:var(--ink-soft); font-size:14.5px;}
+  .squat-titles{display:grid; grid-template-columns:1fr 1fr; text-align:center; font-size:16px; margin-bottom:4px;}
+  .squat-titles small{display:block; color:var(--ink-soft); font-size:13px;}
+  .pressure{max-width:520px; margin-top:10px;}
+  .prow{display:grid; grid-template-columns:80px 1fr; gap:10px; align-items:center; margin-bottom:8px; font-size:14.5px; font-weight:700;}
+  .pbar{height:16px; border-radius:8px; background:var(--paper-deep); overflow:hidden;}
+  .pbar span{display:block; height:100%;}
+  .pbar .bad{background:var(--villain);} .pbar .st{background:var(--hero);}
+</style>
+</head>
+<body>
+<a href="../" style="position:fixed;top:12px;left:12px;z-index:9999;font:700 14px 'Noto Sans TC',sans-serif;background:rgba(38,48,42,.88);color:#fff;text-decoration:none;padding:8px 14px;border-radius:999px;">← 教材總庫</a>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Patellofemoral Pain · 觀念圖解</div>
+    <h1>髕骨痛與髕骨軌道</h1>
+    <p class="subtitle">膝蓋前側痛、有聲音，怎麼看</p>
+    <div class="formula">
+      <span class="chip gold">搞懂聲響</span>
+      <span class="plus">+</span>
+      <span class="chip slate">看懂髕骨的拔河</span>
+      <span class="plus">+</span>
+      <span class="chip hero">練大腿與臀部、調整下蹲</span>
+    </div>
+    <nav class="toc" aria-label="本頁目錄">
+      <a href="#sound">聲響</a>
+      <a href="#tug">髕骨的拔河</a>
+      <a href="#rotation">大腿內轉</a>
+      <a href="#screwhome">螺旋回返</a>
+      <a href="#release">放鬆的定位</a>
+      <a href="#strength">強化</a>
+      <a href="#squat">下蹲模式</a>
+      <a href="#practice">自我檢查與練習</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ======================= 01 ======================= -->
+<section id="sound">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">01 — 軟骨與聲響</div>
+      <h2>膝蓋有聲音，不一定是壞事</h2>
+      <p class="lede">
+        <b>髕骨</b><span class="term">（膝蓋前面那塊可以推動的圓形骨頭）</span>的背面有一層<b>關節軟骨</b><span class="term">（包在骨頭表面、光滑有彈性的組織）</span>。
+        軟骨本身<b>沒有神經</b>，所以單純「卡啦卡啦」的聲音，常常不痛也不代表正在受傷。很多膝蓋完全健康的人，蹲下時也會有聲音。
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3 style="color:var(--hero);">比較不用擔心</h3>
+        <ul class="plain">
+          <li>有聲音，但<b>不痛</b></li>
+          <li>不會腫、不會卡住</li>
+          <li>聲音很久都差不多，沒有越來越嚴重</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--villain);">建議找人評估</h3>
+        <ul class="plain">
+          <li>聲音<b>伴隨疼痛</b>，或痛越來越頻繁</li>
+          <li>膝蓋腫起來、發熱</li>
+          <li>膝蓋突然卡住、伸不直，或突然軟腳</li>
+          <li>跌倒、扭到之後才開始有聲音</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout hero"><b>重點：</b>軟骨不怕「磨」，比較怕的是兩件事：<b>髕骨走的路線長期偏一邊</b>，以及<b>髕骨承受的壓力太大、加得太快</b>。後面的內容都圍繞這兩件事。</div>
+  </div>
+</section>
+
+<!-- ======================= 02 ======================= -->
+<section id="tug">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">02 — 髕骨的拔河</div>
+      <h2>誰把髕骨往內拉，誰往外拉</h2>
+      <p class="lede">
+        髕骨在大腿骨前面的一條<b>溝槽</b><span class="term">（滑車溝，像火車軌道）</span>裡上下滑動。左右兩邊各有組織在拉它，平衡的時候髕骨就走在軌道中間。
+      </p>
+    </div>
+
+    <div class="tug">
+      <div class="card tug-side in">
+        <span class="tag">往內拉</span>
+        <dl>
+          <dt>股內側斜肌（VMO） <span class="term">大腿前側靠內、膝蓋上方那一顆</span></dt>
+          <dd>股四頭肌的一部分，是往內拉的主要<b>肌肉</b>，會出力、會累，可以訓練。</dd>
+          <dt>髕股內側韌帶（MPFL） <span class="term">髕骨內側連到大腿骨的韌帶</span></dt>
+          <dd>膝蓋接近伸直時，它是拉住髕骨不往外跑的<b>主力</b>。韌帶不會因為訓練變強，但需要肌肉幫忙分擔。</dd>
+        </dl>
+      </div>
+      <div class="tug-mid" aria-hidden="true">
+        <svg viewBox="0 0 120 160">
+          <path d="M60 20 C38 20 28 50 30 80 C32 112 46 140 60 140 C74 140 88 112 90 80 C92 50 82 20 60 20 Z" fill="var(--bone)" stroke="var(--ink-soft)" stroke-width="2"/>
+          <text x="60" y="86" text-anchor="middle" font-size="13" fill="var(--ink-soft)">髕骨</text>
+          <line x1="28" y1="80" x2="4" y2="80" stroke="var(--hero)" stroke-width="5" stroke-linecap="round"/>
+          <line x1="92" y1="80" x2="116" y2="80" stroke="var(--villain)" stroke-width="5" stroke-linecap="round"/>
+          <path d="M2 80 l10 -7 v14 z" fill="var(--hero)"/>
+          <path d="M118 80 l-10 -7 v14 z" fill="var(--villain)"/>
+        </svg>
+      </div>
+      <div class="card tug-side out">
+        <span class="tag">往外拉</span>
+        <dl>
+          <dt>股外側肌 <span class="term">大腿外側最大塊的肌肉</span></dt>
+          <dd>股四頭肌裡最大的一塊，力量比內側大，天生就有把髕骨往外帶的傾向。</dd>
+          <dt>外側支持帶 <span class="term">髕骨外側的一片筋膜</span></dt>
+          <dd>連著髕骨外側，太緊時會把髕骨往外拉、往外傾。</dd>
+          <dt>髂脛束（ITB） <span class="term">大腿外側從髖到膝、很硬的一條筋膜</span></dt>
+          <dd>有纖維連到外側支持帶，所以也間接影響髕骨。</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="callout"><b>還有一個常被忽略的穩定來源：骨頭形狀。</b>膝蓋彎超過大約 30°，髕骨會「卡進」溝槽深處，靠溝槽的形狀就很穩。所以髕骨最容易往外偏的角度，是<b>接近伸直到微彎</b>的那一段。</div>
+  </div>
+</section>
+
+<!-- ======================= 03 ======================= -->
+<section id="rotation">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">03 — 大腿往內轉</div>
+      <h2>髕骨沒有跑，是大腿在它底下轉</h2>
+      <p class="lede">
+        下蹲、下樓梯、落地時，如果<b>膝蓋往內夾</b><span class="term">（動態膝外翻，膝蓋往身體中線倒）</span>，常常是<b>大腿骨往內轉</b>了。
+        髕骨被肌肉和肌腱拉著不太跟著轉，結果就是：軌道往內移，髕骨「相對」跑到軌道外側，外側那半邊的壓力變大。
+      </p>
+    </div>
+
+    <div class="lab">
+      <div class="lab-grid">
+        <div>
+          <div class="pair">
+            <div class="stage-box">
+              <span class="view-label">正面看・右腳</span>
+              <svg id="legSvg" viewBox="0 0 200 300" role="img" aria-label="正面看右腳，膝蓋隨大腿內轉往內夾"></svg>
+            </div>
+            <div class="stage-box">
+              <span class="view-label">膝蓋切面・從下往上看</span>
+              <svg id="axialSvg" viewBox="0 0 260 252" role="img" aria-label="膝蓋切面，大腿骨溝槽轉動時髕骨的相對位置"></svg>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="slider-wrap">
+            <label for="rotSlider">大腿往內轉 <output id="rotOut">0°</output></label>
+            <input type="range" id="rotSlider" min="0" max="20" step="1" value="0">
+            <div class="slider-ticks"><span>0° 對齊</span><span>10°</span><span>20° 明顯內轉</span></div>
+          </div>
+          <div class="readout" style="margin-top:12px;">
+            <div class="read"><div class="k">髕骨在軌道的位置</div><div class="v small" id="posOut">置中</div></div>
+            <div class="read"><div class="k">外側壓力（示意）</div><div class="v small" id="latOut">平均分攤</div></div>
+          </div>
+          <div class="ratio-bar" aria-hidden="true"><span class="st" id="medBar" style="width:50%"></span><span class="bad" id="latBar" style="width:50%"></span></div>
+          <div class="ratio-text">左：內側面分到的壓力　右：外側面分到的壓力</div>
+          <div class="mode-note" id="rotNote"></div>
+        </div>
+      </div>
+      <p class="fig-note">圖解為簡化示意，角度刻意放大以便看清楚。真實情況還會受腳掌、骨盆、軀幹姿勢影響，也不是每個膝蓋往內夾的人都會痛。</p>
+    </div>
+
+    <div class="grid-2" style="margin-top:18px;">
+      <div class="card">
+        <h3>為什麼大腿會往內轉？</h3>
+        <ul class="plain">
+          <li><b>臀部肌力或控制不足：</b>臀中肌<span class="term">（屁股外上方，負責把大腿往外撐）</span>、臀大肌負責拉住大腿不往內倒。研究發現髕骨痛的人常有髖部肌力較弱的情況，但是先弱才痛、還是痛了才弱，目前還說不準。</li>
+          <li><b>疲勞：</b>練到後段、走遠路之後比較明顯。</li>
+          <li><b>腳掌塌陷：</b>足弓往下塌時，小腿跟著往內轉，膝蓋也會被帶著往內。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>網路上常見、但講太滿的說法</h3>
+        <ul class="plain">
+          <li>「骨盆前傾 → 臀中肌沒力 → 外側收緊 → 髕骨歪」：每一步都有可能，但這條連鎖目前<b>沒有足夠證據</b>串起來，不是每個人都這樣。</li>
+          <li>「某一條肌肉是矯正骨盆前傾最重要的」：骨盆姿勢受很多因素影響，很難歸給單一肌肉。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 04 ======================= -->
+<section id="screwhome">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">04 — 補充小知識</div>
+      <h2>螺旋回返機制是什麼？</h2>
+    </div>
+    <div class="side-box">
+      <div class="sb-kicker">Screw-home mechanism</div>
+      <p>
+        膝蓋快要完全伸直的最後大約 20–30°，<b>小腿骨（脛骨）和大腿骨之間會自動轉一點點</b>，像把螺絲最後一圈鎖緊，讓膝蓋站直時比較穩、比較省力。
+        站著的時候，是大腿骨在小腿骨上往內轉一點；坐著踢腿的時候，則是小腿骨往外轉一點。
+        要彎膝蓋時，膝蓋後方一條叫<b>膕肌</b><span class="term">（膝窩深層的小肌肉）</span>的肌肉會先把這把鎖「解開」。
+      </p>
+      <p style="margin-bottom:0;">
+        <b>和髕骨痛的關係：</b>這是每個人都有的<b>正常機制</b>，不是造成髕骨往外偏的原因。和髕骨軌道比較有關的，是上一節講的「動作中大腿往內轉、膝蓋往內夾」。兩件事都和「轉」有關，很容易被混在一起講。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 05 ======================= -->
+<section id="release">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">05 — 放鬆的定位</div>
+      <h2>放鬆能讓動作好做，但不會把髕骨「拉正」</h2>
+      <p class="lede">
+        髂脛束是很硬、很緻密的筋膜，<b>用滾筒滾它，幾乎不會讓它變長</b>，直接壓在上面滾通常又很痛。
+        比較合理的做法，是放鬆和它相連、或在大腿外側的<b>肌肉</b>，目的是暫時降低緊繃感，讓接下來的訓練比較好做。
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card release-card">
+        <h3>闊筋膜張肌 <span class="term">TFL</span></h3>
+        <p>在褲子口袋外側、髖骨前方的一小塊，往下接到髂脛束。</p>
+        <p class="how">趴姿或側趴，球放在褲子口袋外側，小範圍滾或停留。</p>
+      </div>
+      <div class="card release-card">
+        <h3>股外側肌</h3>
+        <p>大腿外側、偏前面的大塊肌肉，是把髕骨往外帶的肌肉之一。</p>
+        <p class="how">側趴或半側趴，滾大腿外側偏前方的肉，避開膝蓋旁的骨頭。</p>
+      </div>
+      <div class="card release-card">
+        <h3>股二頭肌</h3>
+        <p>大腿後側靠外的肌肉（膕繩肌的一條），下端在膝蓋外後方。</p>
+        <p class="how">坐姿，球放在大腿後側偏外，用手撐地調整重量。</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <b>放鬆原則：</b>每個位置 30–60 秒，壓到「有感但能放鬆呼吸」就好，不要滾到瘀青、不要直接在膝蓋旁的骨頭上壓。
+      有些影片也會放鬆脛骨前肌<span class="term">（小腿前外側）</span>，但它跟髂脛束、髕骨的關係比較間接，本教材不列入。
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 06 ======================= -->
+<section id="strength">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">06 — 強化</div>
+      <h2>練整條大腿，加上臀部</h2>
+      <p class="lede">
+        常聽到「專練內側頭（VMO）」。實際上，目前研究不太支持能把 VMO <b>單獨</b>挑出來練；
+        比較有共識的做法是<b>整體股四頭肌＋臀部</b>（髖外展、髖外轉）一起強化。練習時仍可以「看著內側頭用力」當提示，幫助大腿前面整體出力。
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>股四頭肌（含內側頭）</h3>
+        <p>負責伸直膝蓋、下樓梯和蹲下時踩煞車。膝蓋腫脹或疼痛後，大腿前面常常會「出力出不來」，內側頭變小、變軟會特別明顯，所以早期先把出力找回來很重要。</p>
+      </div>
+      <div class="card">
+        <h3>臀中肌、臀大肌</h3>
+        <p>把大腿拉住、不讓膝蓋往內夾，下蹲時也能分擔膝蓋的負擔。髖和膝一起練，比只練膝蓋更常被建議。</p>
+      </div>
+    </div>
+    <div class="callout hero"><b>練習放哪裡？</b>具體動作放在第 08 段「入門練習」。</div>
+  </div>
+</section>
+
+<!-- ======================= 07 ======================= -->
+<section id="squat">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">07 — 下蹲模式</div>
+      <h2>膝蓋先動，還是臀部先動？</h2>
+      <p class="lede">
+        蹲下時如果<b>膝蓋先往前衝</b>、上半身挺直，膝蓋要出比較多力，髕骨被壓在溝槽裡的力量也比較大。
+        改成<b>臀部先往後</b>、上半身自然前傾，一部分負擔會分給髖關節和臀部。兩種都不是「錯」，但髕骨正在痛的時候，臀部先動通常比較舒服。
+      </p>
+    </div>
+
+    <div class="lab">
+      <div class="squat-titles">
+        <div><b style="color:var(--villain);">膝蓋先動</b><small>膝蓋往前多、上身直</small></div>
+        <div><b style="color:var(--hero);">臀部先動</b><small>臀部往後、上身前傾</small></div>
+      </div>
+      <svg id="squatSvg" viewBox="0 0 520 300" role="img" aria-label="側面對照兩種下蹲方式"></svg>
+      <div class="slider-wrap" style="max-width:520px;">
+        <label for="depthSlider">蹲下的深度 <output id="depthOut">0%</output></label>
+        <input type="range" id="depthSlider" min="0" max="100" step="1" value="0">
+      </div>
+      <div class="pressure">
+        <div class="prow"><span class="pl" style="color:var(--villain);">膝蓋先動</span><div class="pbar"><span id="pKnee" class="bad"></span></div></div>
+        <div class="prow"><span class="pl" style="color:var(--hero);">臀部先動</span><div class="pbar"><span id="pHip" class="st"></span></div></div>
+        <div class="ratio-text" style="margin-top:6px;">髕骨壓力相對大小（示意，用膝蓋到上半身重心的水平距離估算）</div>
+      </div>
+      <p class="fig-note">示意模型，只比較兩種模式的相對差異，不代表實際受力數值。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 08 ======================= -->
+<section id="practice">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">08 — 自我檢查與入門練習</div>
+      <h2>先看看自己，再開始練</h2>
+      <p class="lede">這些檢查只是幫你「觀察」，不是診斷。看到明顯不對稱或有疑問，可以錄影帶去給教練或醫療人員看。</p>
+    </div>
+
+    <h3 style="font-size:21px; margin-bottom:6px;">自我檢查</h3>
+    <ol class="check-list">
+      <li>
+        <h4>側面照鏡子下蹲</h4>
+        <p>側身對著鏡子，慢慢蹲到椅子高度做 2 下。看看<b>一開始是膝蓋先往前，還是臀部先往後</b>。膝蓋先動、腳跟快離地，就是上面圖解的「膝蓋先動」。</p>
+      </li>
+      <li>
+        <h4>正面看膝蓋有沒有往內夾</h4>
+        <p>面對鏡子或請家人錄影，做雙腳半蹲，再做單腳小幅度半蹲（扶著牆）或下一階樓梯：</p>
+        <ul>
+          <li>膝蓋有沒有往大腳趾內側、往身體中線倒？</li>
+          <li>單腳時，另一側骨盆有沒有往下掉？</li>
+          <li>左右兩腳看起來一樣嗎？</li>
+        </ul>
+      </li>
+      <li>
+        <h4>聲響記錄</h4>
+        <p>有聲音時，同時問自己：<b>痛不痛？</b>之後<b>會不會腫？</b>只有聲音、不痛不腫，通常先觀察就好。</p>
+      </li>
+      <li>
+        <h4>生活問句</h4>
+        <p>最近這些事會讓膝蓋前側痛嗎？</p>
+        <ul>
+          <li>下樓梯（通常比上樓痛）、下坡</li>
+          <li>久坐後站起來（例如看完電影）</li>
+          <li>蹲下撿東西、跪地</li>
+          <li>跑步、跳躍</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h3 style="font-size:21px; margin:38px 0 14px;">入門練習</h3>
+
+    <div class="drill">
+      <span class="badge">DRILL 01</span>
+      <h3>大腿前側收緊 <span class="term">quad set</span></h3>
+      <div class="cue">「膝蓋窩往下壓毛巾，看大腿內側那一顆鼓起來」</div>
+      <ol>
+        <li>坐著或躺著，腳伸直，膝蓋下面墊一條捲起來的毛巾。</li>
+        <li>膝蓋窩往下壓毛巾，大腿前面用力收緊，停 5 秒。</li>
+        <li>放鬆 3 秒，再來一次。</li>
+      </ol>
+      <div class="meta">參考：10 下為一組，做 2–3 組。</div>
+      <div class="err"><b>常見錯誤：</b>憋氣、用力抬屁股或夾屁股代替大腿出力、腳尖用力勾到抽筋。</div>
+      <div class="elder"><b>長輩版：</b>坐在椅子上做就可以，手可以放在大腿內側上方，摸摸看有沒有變硬。</div>
+    </div>
+
+    <div class="drill">
+      <span class="badge">DRILL 02</span>
+      <h3>側躺蚌殼式 <span class="term">clamshell</span></h3>
+      <div class="cue">「膝蓋像蚌殼打開，骨盆不往後倒」</div>
+      <ol>
+        <li>側躺，膝蓋彎約 90°，兩腳腳跟併攏，頭枕在手臂上。</li>
+        <li>腳跟保持貼在一起，上面那腳的膝蓋往上打開，停 1–2 秒。</li>
+        <li>慢慢放回來。</li>
+      </ol>
+      <div class="meta">參考：10–15 下，2–3 組。屁股外上方有痠感是正常的。</div>
+      <div class="err"><b>常見錯誤：</b>上半身和骨盆跟著往後翻、打開太快、腰往前拱。</div>
+      <div class="elder"><b>長輩版：</b>背靠牆側躺，比較不會往後倒；打開幅度小一點沒關係。</div>
+    </div>
+
+    <div class="drill">
+      <span class="badge">DRILL 03</span>
+      <h3>臀部找椅子的坐站練習</h3>
+      <div class="cue">「臀部往後找椅子，膝蓋對準第二根腳趾」</div>
+      <ol>
+        <li>站在椅子前，腳與肩同寬，腳掌（特別是大腳趾根部）踩穩。</li>
+        <li>臀部先往後，上半身自然往前傾，慢慢坐到椅子上（輕碰就好）。</li>
+        <li>腳踩地、臀部出力站起來。可以在膝蓋上方套彈力帶，提醒膝蓋不往內夾。</li>
+      </ol>
+      <div class="meta">參考：8–10 下，2–3 組。</div>
+      <div class="err"><b>常見錯誤：</b>膝蓋先往前衝、膝蓋往內夾、重心跑到腳尖或腳跟翹起、一屁股跌坐下去。</div>
+      <div class="elder"><b>長輩版：</b>椅子高一點、前面放一張穩的桌子可以扶；先求慢慢坐下，再求站起來不用手撐。</div>
+    </div>
+
+    <div class="card" style="margin-top:26px;">
+      <h3>疼痛原則</h3>
+      <p style="margin-bottom:0;">用 0–10 分評估練習時膝蓋的不舒服（0 是完全不痛，10 是無法忍受）：</p>
+      <div class="pain-scale" aria-hidden="true">
+        <span class="ok">0</span><span class="ok">1</span><span class="ok">2</span><span class="ok">3</span>
+        <span class="warn">4</span><span class="warn">5</span><span class="warn">6</span>
+        <span class="stop">7</span><span class="stop">8</span><span class="stop">9</span><span class="stop">10</span>
+      </div>
+      <div class="pain-legend"><span>0–3 分：可以繼續</span><span>超過 3 分：縮小蹲的深度、放慢、減少次數；調整後仍超過就先停</span></div>
+      <p style="margin-top:14px;">可以繼續的條件：練習時<b>不超過 3 分</b>，而且<b>隔天沒有比較痛、沒有腫</b>。隔天變更痛，下次就減量。</p>
+      <p style="margin-bottom:4px;">出現以下情況，請<b>先就醫評估</b>，不要自己硬練：</p>
+      <div class="red-flags">
+        <span>膝蓋明顯腫脹、發熱</span><span>膝蓋卡住伸不直</span><span>突然軟腳</span><span>跌倒或扭傷後的疼痛</span><span>夜間痛醒</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="summary-card">
+      <div class="eyebrow">總結一句話</div>
+      <p>膝蓋有聲音<b>不痛不腫</b>通常不用緊張；髕骨比較怕的是<b>走偏</b>和<b>壓力太大</b>。練習重點是<b>大腿前側＋臀部一起練</b>、下蹲時<b>臀部先往後</b>，放鬆只是幫忙讓動作好做。</p>
+    </div>
+    <p class="disclaimer">
+      本頁內容為運動教學與觀念說明，不能取代醫療診斷或治療。<b>疼痛持續請先就醫評估。</b><br>
+      © Lewin 教練
+    </p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const NS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs, parent){
+    const e = document.createElementNS(NS, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  const rad = d => d * Math.PI / 180;
+  const f = n => n.toFixed(1);
+  function rot(p, deg, c){
+    const r = rad(deg), cs = Math.cos(r), sn = Math.sin(r);
+    const x = p[0] - c[0], y = p[1] - c[1];
+    return [c[0] + x * cs - y * sn, c[1] + x * sn + y * cs];
+  }
+  function marker(defs, id, color){
+    const m = el('marker', {id, viewBox:'0 0 10 10', refX:'6', refY:'5', markerWidth:'6', markerHeight:'6', orient:'auto'}, defs);
+    el('path', {d:'M0 0 L10 5 L0 10 Z', fill:color}, m);
+  }
+
+  /* ============ 03 大腿內轉 ============ */
+  const legSvg = document.getElementById('legSvg');
+  const axialSvg = document.getElementById('axialSvg');
+  const rotSlider = document.getElementById('rotSlider');
+  const rotOut = document.getElementById('rotOut');
+  const posOut = document.getElementById('posOut');
+  const latOut = document.getElementById('latOut');
+  const medBar = document.getElementById('medBar');
+  const latBar = document.getElementById('latBar');
+  const rotNote = document.getElementById('rotNote');
+
+  function drawLeg(a){
+    legSvg.innerHTML = '';
+    const defs = el('defs', {}, legSvg); marker(defs, 'aV', 'var(--villain)');
+    // right leg seen from the front: person's midline is on viewer's left
+    const hip = [120, 34], ankle = [112, 270];
+    const kneeShift = a * 1.9;                     // knee drifts toward midline
+    const knee = [118 - kneeShift, 152];
+    // midline
+    el('line', {x1:28, y1:20, x2:28, y2:290, stroke:'var(--ink-soft)', 'stroke-width':1.2, 'stroke-dasharray':'3 6', opacity:.7}, legSvg);
+    const ml = el('text', {x:32, y:292, 'font-size':11, fill:'var(--ink-soft)'}, legSvg); ml.textContent = '身體中線';
+    // reference straight line hip→ankle
+    el('line', {x1:hip[0], y1:hip[1], x2:ankle[0], y2:ankle[1], stroke:'var(--ink-soft)', 'stroke-width':1.2, 'stroke-dasharray':'4 4', opacity:.6}, legSvg);
+    // thigh & shank
+    const segs = [[hip, knee, 34], [knee, ankle, 26]];
+    segs.forEach(([p, q, w]) => {
+      el('line', {x1:p[0], y1:p[1], x2:q[0], y2:q[1], stroke:'var(--body-fill)', 'stroke-width':w + 2, 'stroke-linecap':'round'}, legSvg);
+    });
+    segs.forEach(([p, q]) => {
+      el('line', {x1:p[0], y1:p[1], x2:q[0], y2:q[1], stroke:'var(--ink-soft)', 'stroke-width':1.4, 'stroke-linecap':'round', opacity:.6}, legSvg);
+    });
+    // foot
+    el('path', {d:`M${ankle[0] - 14} ${ankle[1] + 8} Q${ankle[0]} ${ankle[1] - 6} ${ankle[0] + 16} ${ankle[1] + 8} L${ankle[0] + 18} ${ankle[1] + 18} L${ankle[0] - 16} ${ankle[1] + 18} Z`, fill:'var(--body-fill)', stroke:'var(--ink-soft)', 'stroke-width':1.2}, legSvg);
+    // patella: stays slightly lateral relative to the knee as femur rotates in
+    const pat = [knee[0] + a * 0.45, knee[1] - 6];
+    const bad = a >= 8;
+    el('ellipse', {cx:pat[0], cy:pat[1], rx:11, ry:14, fill:'var(--bone)', stroke: bad ? 'var(--villain)' : 'var(--hero)', 'stroke-width':2.4}, legSvg);
+    // rotation arrow on thigh
+    if (a > 1){
+      el('path', {d:`M${hip[0] + 20} 82 Q${hip[0]} 98 ${hip[0] - 22} 84`, fill:'none', stroke:'var(--villain)', 'stroke-width':2, 'marker-end':'url(#aV)'}, legSvg);
+      const t = el('text', {x:hip[0] + 30, y:78, 'font-size':12, 'font-weight':700, fill:'var(--villain)', 'text-anchor':'end'}, legSvg);
+      t.textContent = '內轉';
+    }
+    if (a >= 8){
+      const t = el('text', {x:knee[0] - 20, y:knee[1] + 4, 'font-size':12, 'font-weight':700, fill:'var(--villain)', 'text-anchor':'end'}, legSvg);
+      t.textContent = '膝蓋往內';
+    }
+    const lb = el('text', {x:150, y:292, 'font-size':11, fill:'var(--ink-soft)'}, legSvg); lb.textContent = '外側 →';
+  }
+
+  // axial view: femur condyles below, patella above. Lateral is on viewer's right.
+  const FEMUR_C = [130, 175];
+  const FEMUR = [
+    [-92, 6], [-88, -28], [-62, -48], [-34, -40], [-14, -24], [0, -20], [16, -26], [44, -48], [78, -56], [100, -30], [102, 10],
+    [86, 40], [44, 46], [20, 30], [0, 22], [-20, 30], [-48, 46], [-80, 38]
+  ].map(p => [FEMUR_C[0] + p[0], FEMUR_C[1] + p[1]]);
+  const GROOVE = [FEMUR_C[0] + 0, FEMUR_C[1] - 20];
+
+  function smoothPath(pts){
+    let d = 'M' + f(pts[0][0]) + ' ' + f(pts[0][1]);
+    for (let i = 1; i <= pts.length; i++){
+      const p0 = pts[(i - 1) % pts.length], p1 = pts[i % pts.length];
+      const mx = (p0[0] + p1[0]) / 2, my = (p0[1] + p1[1]) / 2;
+      d += ' Q' + f(p0[0]) + ' ' + f(p0[1]) + ' ' + f(mx) + ' ' + f(my);
+    }
+    return d + ' Z';
+  }
+
+  function drawAxial(a){
+    axialSvg.innerHTML = '';
+    const defs = el('defs', {}, axialSvg); marker(defs, 'aV2', 'var(--villain)');
+    const k = 1.2;                         // exaggeration for visibility
+    const ang = -a * k;                    // femur internal rotation turns groove toward medial (viewer's left)
+    const fem = FEMUR.map(p => rot(p, ang, [FEMUR_C[0], FEMUR_C[1] + 30]));
+    const groove = rot(GROOVE, ang, [FEMUR_C[0], FEMUR_C[1] + 30]);
+    // labels
+    const lm = el('text', {x:8, y:248, 'font-size':12, fill:'var(--ink-soft)'}, axialSvg); lm.textContent = '← 內側';
+    const ll = el('text', {x:252, y:248, 'font-size':12, fill:'var(--ink-soft)', 'text-anchor':'end'}, axialSvg); ll.textContent = '外側 →';
+    const lf = el('text', {x:FEMUR_C[0], y:FEMUR_C[1] + 12, 'font-size':12, fill:'var(--ink-soft)', 'text-anchor':'middle'}, axialSvg); lf.textContent = '大腿骨';
+    // femur
+    el('path', {d:smoothPath(fem), fill:'var(--bone)', stroke:'var(--ink-soft)', 'stroke-width':2}, axialSvg);
+    // groove center line
+    el('line', {x1:f(groove[0]), y1:f(groove[1] + 4), x2:f(groove[0]), y2:30, stroke:'var(--slate)', 'stroke-width':1.4, 'stroke-dasharray':'4 4'}, axialSvg);
+    const gl = el('text', {x:f(groove[0] - 4), y:28, 'font-size':11, fill:'var(--slate)', 'text-anchor':'end'}, axialSvg); gl.textContent = '軌道中線';
+    // patella: fixed, tilts slightly lateral
+    const P = [130, 104];
+    const tilt = a * 0.6;
+    const patPts = [[-40, 8], [-30, -14], [0, -22], [34, -14], [46, 8], [16, 18], [0, 24], [-18, 16]]
+      .map(p => rot([P[0] + p[0], P[1] + p[1]], tilt, P));
+    const sev = Math.min(1, a / 16);
+    el('path', {d:smoothPath(patPts), fill:'var(--bone)', stroke: a >= 8 ? 'var(--villain)' : 'var(--hero)', 'stroke-width':2.4}, axialSvg);
+    const pl = el('text', {x:P[0], y:P[1] - 2, 'font-size':12, fill:'var(--ink-soft)', 'text-anchor':'middle'}, axialSvg); pl.textContent = '髕骨';
+    // lateral facet pressure highlight
+    if (a > 0){
+      const lf1 = rot([P[0] + 16, P[1] + 20], tilt, P), lf2 = rot([P[0] + 44, P[1] + 10], tilt, P);
+      el('line', {x1:f(lf1[0]), y1:f(lf1[1]), x2:f(lf2[0]), y2:f(lf2[1]), stroke:'var(--villain)', 'stroke-width':3 + sev * 6, 'stroke-linecap':'round', opacity:.35 + sev * .6}, axialSvg);
+    }
+    // patella center vs groove
+    el('line', {x1:P[0], y1:P[1] + 24, x2:P[0], y2:P[1] + 44, stroke:'var(--ink)', 'stroke-width':1.4}, axialSvg);
+    if (Math.abs(P[0] - groove[0]) > 4){
+      el('line', {x1:f(groove[0]), y1:P[1] + 38, x2:P[0] - 2, y2:P[1] + 38, stroke:'var(--villain)', 'stroke-width':2, 'marker-end':'url(#aV2)'}, axialSvg);
+    }
+  }
+
+  function updateRot(){
+    const a = Number(rotSlider.value);
+    rotOut.textContent = a + '°';
+    drawLeg(a); drawAxial(a);
+    const latPct = 50 + a * 1.6;
+    medBar.style.width = (100 - latPct) + '%';
+    latBar.style.width = latPct + '%';
+    if (a < 4){
+      posOut.textContent = '置中'; latOut.textContent = '平均分攤';
+      rotNote.className = 'mode-note';
+      rotNote.innerHTML = '<b>對齊</b>大腿、膝蓋、腳尖在同一條線上，髕骨走在軌道中間，內外兩邊一起分擔壓力。';
+    } else if (a < 10){
+      posOut.textContent = '略偏外'; latOut.textContent = '外側較多';
+      rotNote.className = 'mode-note fault';
+      rotNote.innerHTML = '<b>輕微內轉</b>大腿骨往內轉，軌道跟著往內移，髕骨相對偏到外側，外側面開始分到比較多壓力。';
+    } else {
+      posOut.textContent = '明顯偏外'; latOut.textContent = '集中外側';
+      rotNote.className = 'mode-note fault';
+      rotNote.innerHTML = '<b>明顯內轉</b>膝蓋明顯往內夾，壓力集中在髕骨外側面。偶爾一次沒關係，長期、反覆、加上負重才比較需要注意。';
+    }
+  }
+  rotSlider.addEventListener('input', updateRot);
+  updateRot();
+
+  /* ============ 07 下蹲模式 ============ */
+  const squatSvg = document.getElementById('squatSvg');
+  const depthSlider = document.getElementById('depthSlider');
+  const depthOut = document.getElementById('depthOut');
+  const pKnee = document.getElementById('pKnee');
+  const pHip = document.getElementById('pHip');
+  const LS = 80, LT = 86, LTR = 100;
+  const MODELS = {
+    knee: {s:40, th:72, tr:16, color:'var(--villain)'},
+    hip:  {s:20, th:78, tr:44, color:'var(--hero)'}
+  };
+  function pose(m, d, ankle){
+    const s = rad(m.s * d), th = rad(m.th * d), tr = rad(m.tr * d);
+    const knee = [ankle[0] + LS * Math.sin(s), ankle[1] - LS * Math.cos(s)];
+    const hip = [knee[0] - LT * Math.sin(th), knee[1] - LT * Math.cos(th)];
+    const sh = [hip[0] + LTR * Math.sin(tr), hip[1] - LTR * Math.cos(tr)];
+    const head = [sh[0] + 22 * Math.sin(tr * 0.6), sh[1] - 22 * Math.cos(tr * 0.6)];
+    const com = [(hip[0] + sh[0]) / 2, (hip[1] + sh[1]) / 2];
+    return {ankle, knee, hip, sh, head, com};
+  }
+  // normalise pressure by the larger of the two models at full depth
+  const MAXARM = Math.max(...Object.values(MODELS).map(m => { const p = pose(m, 1, [0, 0]); return p.knee[0] - p.com[0]; }));
+
+  function drawFigure(p, color, ox){
+    const g = el('g', {}, squatSvg);
+    const L = (a, b, w) => el('line', {x1:f(a[0]), y1:f(a[1]), x2:f(b[0]), y2:f(b[1]), stroke:color, 'stroke-width':w, 'stroke-linecap':'round'}, g);
+    el('line', {x1:ox - 70, y1:p.ankle[1] + 10, x2:ox + 120, y2:p.ankle[1] + 10, stroke:'var(--rule)', 'stroke-width':2}, g);
+    // toes reference
+    el('line', {x1:p.ankle[0] + 34, y1:p.ankle[1] + 10, x2:p.ankle[0] + 34, y2:p.ankle[1] - 120, stroke:'var(--ink-soft)', 'stroke-width':1.2, 'stroke-dasharray':'4 5', opacity:.6}, g);
+    const tl = el('text', {x:p.ankle[0] + 38, y:p.ankle[1] - 110, 'font-size':11, fill:'var(--ink-soft)'}, g); tl.textContent = '腳尖';
+    L([p.ankle[0] - 8, p.ankle[1] + 8], [p.ankle[0] + 34, p.ankle[1] + 8], 6);
+    L(p.ankle, p.knee, 7);
+    L(p.knee, p.hip, 8);
+    L(p.hip, p.sh, 8);
+    el('circle', {cx:f(p.head[0]), cy:f(p.head[1] - 8), r:15, fill:'var(--card)', stroke:color, 'stroke-width':4}, g);
+    // arms forward for balance
+    L(p.sh, [p.sh[0] + 46, p.sh[1] + 14], 5);
+    el('circle', {cx:f(p.knee[0]), cy:f(p.knee[1]), r:7, fill:'var(--bone)', stroke:color, 'stroke-width':2.4}, g);
+    // centre of upper-body mass + moment arm
+    el('line', {x1:f(p.com[0]), y1:f(p.com[1]), x2:f(p.com[0]), y2:f(p.knee[1]), stroke:'var(--slate)', 'stroke-width':1.3, 'stroke-dasharray':'3 4'}, g);
+    el('circle', {cx:f(p.com[0]), cy:f(p.com[1]), r:5, fill:'var(--slate)'}, g);
+    if (p.knee[0] - p.com[0] > 6){
+      el('line', {x1:f(p.com[0]), y1:f(p.knee[1]), x2:f(p.knee[0] - 8), y2:f(p.knee[1]), stroke:color, 'stroke-width':2.4}, g);
+    }
+  }
+
+  function updateSquat(){
+    const d = Number(depthSlider.value) / 100;
+    depthOut.textContent = Math.round(d * 100) + '%';
+    squatSvg.innerHTML = '';
+    el('line', {x1:260, y1:20, x2:260, y2:290, stroke:'var(--rule)', 'stroke-width':1}, squatSvg);
+    const pk = pose(MODELS.knee, d, [110, 270]);
+    const ph = pose(MODELS.hip, d, [380, 270]);
+    drawFigure(pk, MODELS.knee.color, 110);
+    drawFigure(ph, MODELS.hip.color, 380);
+    const lg = el('text', {x:260, y:296, 'font-size':11, fill:'var(--ink-soft)', 'text-anchor':'middle'}, squatSvg);
+    lg.textContent = '藍點＝上半身重心　橫線＝離膝蓋多遠';
+    const v1 = Math.max(0, pk.knee[0] - pk.com[0]) / MAXARM;
+    const v2 = Math.max(0, ph.knee[0] - ph.com[0]) / MAXARM;
+    pKnee.style.width = (v1 * 100) + '%';
+    pHip.style.width = (v2 * 100) + '%';
+  }
+  depthSlider.addEventListener('input', updateSquat);
+  updateSquat();
+})();
+</script>
+</body>
+</html>

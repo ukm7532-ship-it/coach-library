@@ -9,6 +9,7 @@ index.html            選單首頁（依部位分類、可搜尋）
 bunion-rehab/         拇外翻康復訓練指南
 deadlift-patterns/    硬舉動作模式比較
 scapulohumeral-rhythm/ 肩肱節律觀念圖解
+patellofemoral-pain/   髕骨痛與髕骨軌道觀念圖解
 ```
 
 ## 新增一份教材
