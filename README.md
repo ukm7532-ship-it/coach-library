@@ -8,6 +8,7 @@ Lewin 教練的運動教材總庫｜復健訓練、動作教學與觀念圖解�
 index.html            選單首頁（依部位分類、可搜尋）
 bunion-rehab/         拇外翻康復訓練指南
 deadlift-patterns/    硬舉動作模式比較
+scapulohumeral-rhythm/ 肩肱節律觀念圖解
 ```
 
 ## 新增一份教材

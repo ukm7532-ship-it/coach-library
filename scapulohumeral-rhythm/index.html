@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>肩肱節律｜手舉起來時，肩胛骨在做什麼</title>
+<meta name="description" content="用白話與互動圖解看懂肩肱節律：2:1 比例、肩胛骨的三個動作、力偶、常見代償、自我檢查與入門練習。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;600;700&family=Zilla+Slab:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDE6D6;
+    --paper-deep:#E2D9C4;
+    --ink:#26302A;
+    --ink-soft:#4B5750;
+    --villain:#A13D2C;
+    --villain-soft:#C97A67;
+    --hero:#3F6E4E;
+    --hero-soft:#7FA98A;
+    --gold:#B9852E;
+    --slate:#4A6670;
+    --card:#F6F1E6;
+    --rule:rgba(38,48,42,0.16);
+    --body-fill:#E4D8BF;
+    --bone:#F3EBD9;
+    --summary-bg:#26302A;
+    --summary-ink:#EDE6D6;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#1C211E;
+      --paper-deep:#252C28;
+      --ink:#ECE7DC;
+      --ink-soft:#A9B2AC;
+      --villain:#E08A73;
+      --villain-soft:#E08A73;
+      --hero:#8DBB9A;
+      --hero-soft:#5E8A6B;
+      --gold:#D9AE62;
+      --slate:#8FB0BB;
+      --card:#252C28;
+      --rule:rgba(236,231,220,0.16);
+      --body-fill:#323A35;
+      --bone:#454E48;
+      --summary-bg:#2E3832;
+      --summary-ink:#ECE7DC;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1C211E;
+    --paper-deep:#252C28;
+    --ink:#ECE7DC;
+    --ink-soft:#A9B2AC;
+    --villain:#E08A73;
+    --villain-soft:#E08A73;
+    --hero:#8DBB9A;
+    --hero-soft:#5E8A6B;
+    --gold:#D9AE62;
+    --slate:#8FB0BB;
+    --card:#252C28;
+    --rule:rgba(236,231,220,0.16);
+    --body-fill:#323A35;
+    --bone:#454E48;
+    --summary-bg:#2E3832;
+    --summary-ink:#ECE7DC;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Noto Sans TC',sans-serif;
+    font-size:16.5px;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+    -webkit-text-size-adjust:100%;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px;}
+  @media (min-width:640px){ .wrap{padding:0 24px;} }
+  .term{color:var(--ink-soft); font-size:.9em; font-weight:400;}
+
+  /* ---------- Hero ---------- */
+  header.hero{
+    background:
+      radial-gradient(ellipse at 80% -10%, rgba(63,110,78,0.12), transparent 55%),
+      radial-gradient(ellipse at 10% 0%, rgba(185,133,46,0.12), transparent 50%),
+      var(--paper);
+    padding:72px 0 40px;
+    border-bottom:1px solid var(--rule);
+  }
+  .eyebrow{
+    font-family:'Zilla Slab',serif; font-style:italic; font-weight:500;
+    letter-spacing:0.14em; text-transform:uppercase; font-size:13px; color:var(--hero);
+  }
+  h1{
+    font-family:'Noto Serif TC',serif; font-weight:900;
+    font-size:clamp(34px,6vw,54px); margin:10px 0 6px; letter-spacing:0.01em; line-height:1.25;
+  }
+  .subtitle{
+    font-family:'Noto Serif TC',serif; font-weight:500; font-size:19px;
+    color:var(--ink-soft); margin:0 0 28px;
+  }
+  .formula{
+    display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+    font-family:'Noto Serif TC',serif; font-weight:700; font-size:clamp(15px,2.6vw,17px);
+  }
+  .chip{ background:var(--card); border:1px solid var(--rule); border-radius:3px; padding:9px 14px; }
+  .chip.slate{border-color:rgba(74,102,112,0.45); color:var(--slate);}
+  .chip.hero{border-color:rgba(63,110,78,0.45); color:var(--hero);}
+  .chip.gold{border-color:rgba(185,133,46,0.5); color:var(--gold);}
+  .plus{color:var(--ink-soft); font-weight:500;}
+  .toc{display:flex; flex-wrap:wrap; gap:8px; margin-top:26px;}
+  .toc a{
+    font-size:14px; color:var(--ink-soft); text-decoration:none;
+    border:1px solid var(--rule); border-radius:999px; padding:6px 12px; min-height:36px;
+    display:inline-flex; align-items:center;
+  }
+  .toc a:hover{border-color:var(--hero); color:var(--hero);}
+
+  /* ---------- Section shell ---------- */
+  section{padding:56px 0; border-bottom:1px solid var(--rule);}
+  .sec-head{margin-bottom:28px;}
+  .sec-num{
+    font-family:'Zilla Slab',serif; font-style:italic; color:var(--villain);
+    font-size:14px; letter-spacing:0.1em;
+  }
+  h2{
+    font-family:'Noto Serif TC',serif; font-weight:900;
+    font-size:clamp(24px,4vw,32px); margin:4px 0 10px; line-height:1.35;
+  }
+  h3{font-family:'Noto Serif TC',serif; font-size:19px; margin:0 0 6px; line-height:1.45;}
+  p{margin:0 0 14px;}
+  p.lede{color:var(--ink-soft); font-size:16.5px; max-width:660px;}
+  .card{
+    background:var(--card); border:1px solid var(--rule); border-radius:6px; padding:20px 22px;
+  }
+  .callout{
+    background:rgba(161,61,44,0.08); border-left:3px solid var(--villain);
+    padding:12px 16px; border-radius:0 4px 4px 0; font-size:15.5px; margin-top:16px;
+  }
+  .callout.hero{background:rgba(63,110,78,0.10); border-left-color:var(--hero);}
+  .callout b{color:var(--villain);}
+  .callout.hero b{color:var(--hero);}
+
+  /* ---------- Interactive stage ---------- */
+  .lab{
+    background:var(--card); border:1px solid var(--rule); border-radius:8px;
+    padding:18px 16px 20px;
+  }
+  @media (min-width:640px){ .lab{padding:22px 24px 24px;} }
+  .lab-grid{display:grid; grid-template-columns:1fr; gap:18px; align-items:start;}
+  @media (min-width:760px){ .lab-grid{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);} }
+  .stage-box{position:relative;}
+  .stage-box .view-label{
+    position:absolute; top:4px; left:6px; font-size:13px; color:var(--ink-soft);
+    font-family:'Zilla Slab',serif; font-style:italic; letter-spacing:.06em;
+  }
+  svg{display:block; width:100%; height:auto;}
+
+  .modes{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;}
+  .mode-btn, .tog-btn{
+    font:inherit; font-size:16px; font-weight:600; cursor:pointer;
+    padding:8px 16px; min-height:44px; border-radius:999px;
+    border:1.5px solid var(--rule); background:transparent; color:var(--ink);
+  }
+  .mode-btn[aria-pressed="true"]{background:var(--hero); border-color:var(--hero); color:var(--paper);}
+  .mode-btn[data-mode="shrug"][aria-pressed="true"],
+  .mode-btn[data-mode="winging"][aria-pressed="true"]{background:var(--villain); border-color:var(--villain);}
+  .tog-btn[aria-pressed="true"]{background:var(--ink); border-color:var(--ink); color:var(--paper);}
+
+  .slider-wrap{margin:6px 0 4px;}
+  .slider-wrap label{display:flex; justify-content:space-between; align-items:baseline; font-weight:700; font-size:15px;}
+  .slider-wrap label output{font-family:'Zilla Slab',serif; font-size:26px; color:var(--ink);}
+  input[type=range]{width:100%; height:44px; accent-color:var(--hero); margin:0;}
+  .slider-ticks{display:flex; justify-content:space-between; font-size:12.5px; color:var(--ink-soft); margin-top:-6px;}
+  .play-row{display:flex; gap:10px; align-items:center; margin:12px 0 16px; flex-wrap:wrap;}
+  .play-btn{
+    font:inherit; font-size:15.5px; font-weight:700; cursor:pointer;
+    background:var(--ink); color:var(--paper); border:none; border-radius:999px;
+    padding:10px 18px; min-height:44px;
+  }
+  .phase{font-size:14.5px; color:var(--ink-soft);}
+  .phase b{color:var(--villain);}
+
+  .readout{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px;}
+  .read{
+    border:1px solid var(--rule); border-radius:6px; padding:10px 12px; background:var(--paper);
+  }
+  .read .k{font-size:13.5px; color:var(--ink-soft); line-height:1.4;}
+  .read .v{font-family:'Zilla Slab',serif; font-weight:700; font-size:30px; line-height:1.2;}
+  .read.gh .v{color:var(--slate);}
+  .read.st .v{color:var(--hero);}
+  .ratio-bar{display:flex; height:14px; border-radius:7px; overflow:hidden; background:var(--paper-deep); margin:4px 0 4px;}
+  .ratio-bar span{display:block; height:100%; transition:width .12s linear;}
+  .ratio-bar .gh{background:var(--slate);}
+  .ratio-bar .st{background:var(--hero);}
+  .ratio-text{font-size:13.5px; color:var(--ink-soft); margin-bottom:12px;}
+
+  .mode-note{
+    border-left:3px solid var(--hero); padding:8px 12px; font-size:15px;
+    background:rgba(63,110,78,0.08); border-radius:0 4px 4px 0;
+  }
+  .mode-note.fault{border-left-color:var(--villain); background:rgba(161,61,44,0.08);}
+  .mode-note b{display:block; margin-bottom:2px;}
+  .inset{margin-top:14px;}
+  .inset .cap{font-size:13px; color:var(--ink-soft); margin-top:2px; text-align:center;}
+  .fig-note{font-size:13px; color:var(--ink-soft); margin-top:14px; line-height:1.7;}
+
+  /* ---------- Generic grids ---------- */
+  .grid-3{display:grid; grid-template-columns:1fr; gap:14px;}
+  @media (min-width:760px){ .grid-3{grid-template-columns:1fr 1fr 1fr;} }
+  .grid-2{display:grid; grid-template-columns:1fr; gap:14px;}
+  @media (min-width:700px){ .grid-2{grid-template-columns:1fr 1fr;} }
+
+  .motion-card .tag{
+    display:inline-block; font-family:'Zilla Slab',serif; font-style:italic; font-size:12.5px;
+    letter-spacing:.06em; padding:2px 10px; border-radius:20px; margin-bottom:8px;
+    background:rgba(63,110,78,0.12); color:var(--hero);
+  }
+  .motion-card svg{max-width:180px; margin:4px auto 10px;}
+  .motion-card p{font-size:15.5px; margin:0;}
+  .motion-card .why{margin-top:8px; color:var(--ink-soft); font-size:14.5px;}
+
+  /* force couple */
+  .couple-grid{display:grid; grid-template-columns:1fr; gap:22px; align-items:start;}
+  @media (min-width:760px){ .couple-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);} }
+  .muscle-list{list-style:none; margin:0; padding:0;}
+  .muscle-list li{padding:12px 0; border-bottom:1px solid var(--rule);}
+  .muscle-list li:last-child{border-bottom:none;}
+  .muscle-list .mname{font-weight:700; font-size:17px;}
+  .muscle-list .mnum{
+    display:inline-flex; width:24px; height:24px; border-radius:50%; align-items:center; justify-content:center;
+    font-family:'Zilla Slab',serif; font-weight:700; font-size:13px; margin-right:8px;
+    color:var(--paper); background:var(--hero); vertical-align:2px;
+  }
+  .down .muscle-list .mnum{background:var(--slate);}
+  .muscle-list p{margin:2px 0 0; font-size:15px; color:var(--ink-soft);}
+
+  /* faults */
+  .fault-card h3{color:var(--villain);}
+  .fault-card dl{margin:10px 0 0; font-size:15px;}
+  .fault-card dt{font-weight:700; margin-top:8px;}
+  .fault-card dd{margin:0; color:var(--ink-soft);}
+  .fault-card ul{margin:2px 0 0; padding-left:20px; color:var(--ink-soft);}
+  .see-btn{
+    margin-top:14px; font:inherit; font-size:14.5px; font-weight:700; cursor:pointer;
+    color:var(--villain); background:none; border:1.5px solid var(--villain); border-radius:999px;
+    padding:6px 14px; min-height:40px;
+  }
+
+  /* eccentric */
+  .phase-compare{display:grid; grid-template-columns:1fr; gap:14px;}
+  @media (min-width:700px){ .phase-compare{grid-template-columns:1fr 1fr;} }
+  .phase-compare .card h3 small{font-family:'Noto Sans TC',sans-serif; font-weight:400; font-size:14px; color:var(--ink-soft);}
+
+  /* checks & drills */
+  .check-list{list-style:none; margin:0; padding:0; counter-reset:chk;}
+  .check-list > li{
+    counter-increment:chk; position:relative; padding:16px 0 16px 44px; border-bottom:1px solid var(--rule);
+  }
+  .check-list > li:last-child{border-bottom:none;}
+  .check-list > li::before{
+    content:counter(chk); position:absolute; left:0; top:17px;
+    width:30px; height:30px; border-radius:50%; background:var(--slate); color:var(--paper);
+    font-family:'Zilla Slab',serif; font-weight:700; display:flex; align-items:center; justify-content:center;
+  }
+  .check-list h4{font-family:'Noto Serif TC',serif; font-size:17.5px; margin:0 0 4px;}
+  .check-list p{margin:0; font-size:15.5px;}
+  .check-list ul{margin:6px 0 0; padding-left:20px; font-size:15.5px;}
+  .check-list ul li{margin-bottom:4px;}
+
+  .drill{
+    background:var(--card); border:1px solid var(--rule); border-left:6px solid var(--hero);
+    border-radius:4px; padding:20px 22px; margin-bottom:16px;
+  }
+  .drill .badge{
+    font-family:'Zilla Slab',serif; font-weight:700; font-size:12.5px; letter-spacing:.08em; color:var(--hero);
+  }
+  .drill h3{margin-top:2px;}
+  .cue{
+    font-family:'Noto Serif TC',serif; font-weight:700; font-size:18px;
+    background:rgba(185,133,46,0.12); color:var(--ink); border-radius:4px;
+    padding:10px 14px; margin:10px 0 12px;
+  }
+  .cue::before{content:'提示語　'; font-family:'Zilla Slab',serif; font-style:italic; font-size:13px; color:var(--gold); font-weight:700;}
+  .drill ol{margin:0 0 10px; padding-left:22px; font-size:15.5px;}
+  .drill ol li{margin-bottom:4px;}
+  .drill .meta{font-size:14.5px; color:var(--ink-soft); margin-bottom:8px;}
+  .drill .err{font-size:15px;}
+  .drill .err b{color:var(--villain);}
+  .drill .elder{font-size:15px; margin-top:8px;}
+  .drill .elder b{color:var(--slate);}
+
+  .big-mistake{
+    background:var(--card); border:2px solid var(--villain); border-radius:6px; padding:20px 22px; margin:26px 0;
+  }
+  .big-mistake .kicker{font-family:'Zilla Slab',serif; font-style:italic; font-weight:700; color:var(--villain); font-size:13px; letter-spacing:.06em;}
+  .big-mistake h3{margin:4px 0 8px;}
+  .big-mistake p{font-size:15.5px;}
+  .big-mistake p:last-child{margin-bottom:0;}
+
+  .pain-scale{display:grid; grid-template-columns:repeat(11,1fr); gap:3px; margin:12px 0 6px;}
+  .pain-scale span{
+    text-align:center; font-family:'Zilla Slab',serif; font-weight:700; font-size:14px;
+    padding:8px 0; border-radius:3px; color:#fff;
+  }
+  .pain-scale .ok{background:#5C8567;}
+  .pain-scale .warn{background:#B9852E;}
+  .pain-scale .stop{background:#A13D2C;}
+  .pain-legend{display:flex; justify-content:space-between; font-size:13px; color:var(--ink-soft); gap:8px;}
+  .red-flags{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 4px;}
+  .red-flags span{
+    border:1.5px solid var(--villain); color:var(--villain); border-radius:999px;
+    padding:4px 12px; font-weight:700; font-size:15px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{padding:50px 0 70px;}
+  .summary-card{ background:var(--summary-bg); color:var(--summary-ink); border-radius:8px; padding:30px 24px; }
+  @media (min-width:640px){ .summary-card{padding:34px 32px;} }
+  .summary-card .eyebrow{color:var(--hero-soft);}
+  .summary-card p{
+    font-family:'Noto Serif TC',serif; font-size:clamp(17px,2.6vw,20px); font-weight:500;
+    margin:10px 0 0; line-height:1.85;
+  }
+  .summary-card b{color:var(--gold);}
+  .disclaimer{font-size:14px; color:var(--ink-soft); margin-top:22px; line-height:1.8;}
+  .disclaimer b{color:var(--villain);}
+
+  ::selection{background:var(--gold); color:var(--paper);}
+  :focus-visible{outline:2px solid var(--slate); outline-offset:2px;}
+</style>
+</head>
+<body>
+<a href="../" style="position:fixed;top:12px;left:12px;z-index:9999;font:700 14px 'Noto Sans TC',sans-serif;background:rgba(38,48,42,.88);color:#fff;text-decoration:none;padding:8px 14px;border-radius:999px;">← 教材總庫</a>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Scapulohumeral Rhythm · 觀念圖解</div>
+    <h1>肩肱節律</h1>
+    <p class="subtitle">手舉起來時，肩胛骨在做什麼</p>
+    <div class="formula">
+      <span class="chip slate">肩關節 約 120°</span>
+      <span class="plus">+</span>
+      <span class="chip hero">肩胛骨 約 60°</span>
+      <span class="plus">=</span>
+      <span class="chip gold">手舉到頭頂 180°</span>
+    </div>
+    <nav class="toc" aria-label="本頁目錄">
+      <a href="#ratio">2:1 比例</a>
+      <a href="#motions">三個動作</a>
+      <a href="#couple">力偶</a>
+      <a href="#faults">常見代償</a>
+      <a href="#lowering">放下更重要</a>
+      <a href="#thoracic">駝背的影響</a>
+      <a href="#practice">自我檢查與練習</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ======================= 01 ======================= -->
+<section id="ratio">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">01 — 2:1 比例</div>
+      <h2>手舉高，不是只有肩膀在動</h2>
+      <p class="lede">
+        把手從身體旁邊舉到頭頂，總共大約 180 度。這 180 度是兩個地方合作完成的：
+        <b>肩關節</b><span class="term">（盂肱關節，上臂骨頭和肩胛骨連接的那個球窩）</span>大約負責 120 度，
+        <b>肩胛骨</b><span class="term">（背上兩片三角形的骨頭）</span>貼著肋骨往上轉，大約負責 60 度。
+        兩者比例大約 2 比 1，這種合作的節奏就叫做<b>肩肱節律</b>。
+      </p>
+    </div>
+
+    <div class="lab" id="lab">
+      <div class="modes" role="group" aria-label="切換對照模式">
+        <button class="mode-btn" type="button" data-mode="normal" aria-pressed="true">正常</button>
+        <button class="mode-btn" type="button" data-mode="shrug" aria-pressed="false">聳肩</button>
+        <button class="mode-btn" type="button" data-mode="winging" aria-pressed="false">翼狀肩胛</button>
+      </div>
+
+      <div class="lab-grid">
+        <div class="stage-box">
+          <span class="view-label">從背後看・右手舉起</span>
+          <svg id="stage" viewBox="0 0 460 460" role="img" aria-label="從背後看的上半身，右手舉起時肩胛骨跟著轉動的示意圖"></svg>
+        </div>
+
+        <div>
+          <div class="slider-wrap">
+            <label for="armSlider">手臂舉起的角度 <output id="armOut">0°</output></label>
+            <input type="range" id="armSlider" min="0" max="180" step="1" value="0">
+            <div class="slider-ticks"><span>0° 手垂下</span><span>90° 平舉</span><span>180° 頭頂</span></div>
+          </div>
+
+          <div class="play-row">
+            <button class="play-btn" id="playBtn" type="button">▶ 播放舉起與放下</button>
+            <span class="phase" id="phase">拖動滑桿或按播放</span>
+          </div>
+
+          <div class="readout">
+            <div class="read gh"><div class="k">肩關節負責</div><div class="v" id="ghOut">0°</div></div>
+            <div class="read st"><div class="k">肩胛骨往上轉</div><div class="v" id="stOut">0°</div></div>
+          </div>
+          <div class="ratio-bar" aria-hidden="true"><span class="gh" id="ghBar" style="width:66.7%"></span><span class="st" id="stBar" style="width:33.3%"></span></div>
+          <div class="ratio-text" id="ratioText">肩關節：肩胛骨 ≈ 2 : 1</div>
+
+          <div class="mode-note" id="modeNote"></div>
+
+          <div class="inset">
+            <svg id="topView" viewBox="0 0 240 130" role="img" aria-label="從頭頂往下看，右側肩胛骨與肋骨的貼合程度"></svg>
+            <div class="cap">從頭頂往下看：肩胛骨有沒有貼著肋骨</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="fig-note">
+        圖解為簡化示意。真實的 2:1 是很多人的<b>平均值</b>，每個人都不太一樣：剛開始舉手的前 30 度左右，肩胛骨通常動得比較少，
+        之後比例才明顯；年齡、體型、肩膀活動度、手往前舉或往旁邊舉，都會讓比例不同。重點不是「一定要剛好 2:1」，
+        而是<b>兩邊都有參與、動作平順、左右差不多</b>。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 02 ======================= -->
+<section id="motions">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">02 — 三個動作</div>
+      <h2>舉手時，肩胛骨同時做三件事</h2>
+      <p class="lede">肩胛骨不是只會「往上轉」。它像一片貼在肋骨上的滑板，舉手時會同時往三個方向調整，替肩關節讓出空間、把「碗口」對準手臂。</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card motion-card">
+        <span class="tag">Upward rotation</span>
+        <svg viewBox="0 0 180 130" aria-hidden="true">
+          <line x1="40" y1="10" x2="40" y2="122" stroke="var(--rule)" stroke-width="2" stroke-dasharray="4 4"/>
+          <path d="M60 32 L132 28 Q134 66 70 112 Q56 72 60 32 Z" fill="none" stroke="var(--ink-soft)" stroke-width="1.6" stroke-dasharray="4 3"/>
+          <g transform="rotate(-24 92 58)">
+            <path d="M60 32 L132 28 Q134 66 70 112 Q56 72 60 32 Z" fill="var(--bone)" stroke="var(--hero)" stroke-width="2.2"/>
+          </g>
+          <path d="M70 118 Q100 124 118 104" fill="none" stroke="var(--hero)" stroke-width="2.4" marker-end="url(#mArrowHero)"/>
+          <text x="140" y="20" font-size="12" fill="var(--hero)" font-weight="700">碗口朝上</text>
+          <defs><marker id="mArrowHero" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--hero)"/></marker></defs>
+        </svg>
+        <h3>上轉 <span class="term">upward rotation</span></h3>
+        <p>從背後看，肩胛骨的下角往外、往上繞，肩關節那個「碗」<span class="term">（關節盂）</span>跟著轉向上方。</p>
+        <p class="why">為什麼重要：碗口朝上，手臂舉高時球才能穩穩待在碗裡，不必全靠肩關節硬撐。</p>
+      </div>
+
+      <div class="card motion-card">
+        <span class="tag">Posterior tilt</span>
+        <svg viewBox="0 0 180 130" aria-hidden="true">
+          <path d="M120 8 Q166 64 120 124" fill="none" stroke="var(--ink-soft)" stroke-width="2"/>
+          <text x="138" y="70" font-size="11" fill="var(--ink-soft)">肋骨</text>
+          <line x1="104" y1="22" x2="112" y2="112" stroke="var(--ink-soft)" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 6" opacity=".7"/>
+          <line x1="94" y1="24" x2="118" y2="110" stroke="var(--hero)" stroke-width="6" stroke-linecap="round"/>
+          <path d="M78 34 Q76 18 92 14" fill="none" stroke="var(--hero)" stroke-width="2.2" marker-end="url(#mArrowHero2)"/>
+          <text x="10" y="20" font-size="12" fill="var(--hero)" font-weight="700">上緣往後</text>
+          <text x="20" y="118" font-size="12" fill="var(--ink-soft)">← 背後</text>
+          <defs><marker id="mArrowHero2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--hero)"/></marker></defs>
+        </svg>
+        <h3>後傾 <span class="term">posterior tilt</span></h3>
+        <p>從側面看，肩胛骨的上緣往後倒、下角往肋骨貼近，好像一本書的上端往後翻。</p>
+        <p class="why">為什麼重要：讓肩膀前上方多出一點空間，手舉高時，肩膀上方的肌腱比較不會被擠到。</p>
+      </div>
+
+      <div class="card motion-card">
+        <span class="tag">External rotation</span>
+        <svg viewBox="0 0 180 130" aria-hidden="true">
+          <path d="M20 40 Q90 -6 160 40 Q170 70 160 92 Q90 130 20 92 Q10 70 20 40 Z" fill="none" stroke="var(--ink-soft)" stroke-width="2"/>
+          <circle cx="90" cy="110" r="5" fill="var(--ink-soft)"/>
+          <text x="98" y="126" font-size="11" fill="var(--ink-soft)">脊椎</text>
+          <path d="M108 112 Q140 106 160 86" fill="none" stroke="var(--hero)" stroke-width="6" stroke-linecap="round"/>
+          <path d="M150 64 Q170 58 172 40" fill="none" stroke="var(--hero)" stroke-width="2.2" marker-end="url(#mArrowHero3)"/>
+          <text x="6" y="14" font-size="12" fill="var(--ink-soft)">從頭頂往下看</text>
+          <text x="98" y="78" font-size="12" fill="var(--hero)" font-weight="700">貼著繞</text>
+          <defs><marker id="mArrowHero3" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--hero)"/></marker></defs>
+        </svg>
+        <h3>外轉 <span class="term">external rotation</span></h3>
+        <p>從頭頂往下看，肩胛骨順著肋骨的弧度往外繞，靠脊椎那一側的邊緣<span class="term">（內側緣）</span>持續貼著背。</p>
+        <p class="why">為什麼重要：肩胛骨貼得住肋骨，手臂才有穩定的底座；貼不住就會變成「翼狀肩胛」。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 03 ======================= -->
+<section id="couple">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">03 — 力偶</div>
+      <h2>好幾條肌肉一起轉方向盤</h2>
+      <p class="lede">
+        <b>力偶</b><span class="term">（force couple）</span>的意思是：幾條肌肉從不同方向拉同一塊骨頭，合起來讓它「轉」起來，
+        就像兩隻手一上一下轉方向盤。肩胛骨有一組負責<b>往上轉</b>（舉手），另一組負責<b>往下轉</b>（放下、把肩胛骨帶回原位）。兩組都重要，沒有誰是壞人。
+      </p>
+    </div>
+
+    <div class="modes" role="group" aria-label="切換肌肉組">
+      <button class="tog-btn" type="button" data-group="up" aria-pressed="true">上轉組（舉手）</button>
+      <button class="tog-btn" type="button" data-group="down" aria-pressed="false">下轉組（放下）</button>
+    </div>
+
+    <div class="couple-grid" id="coupleGrid">
+      <div class="card">
+        <svg id="coupleSvg" viewBox="0 0 340 330" role="img" aria-label="右側肩胛骨背面，箭頭顯示肌肉拉的方向"></svg>
+      </div>
+      <div id="coupleList"></div>
+    </div>
+
+    <div class="callout hero"><b>白話重點：</b>上轉組要「一起、準時」出力，肩胛骨才會平順地轉；其中一條太搶（例如上斜方肌）或太慢（例如下斜方肌、前鋸肌），就容易出現下一節的代償。下轉組則像煞車，負責手放下時讓肩胛骨穩穩回家。</div>
+  </div>
+</section>
+
+<!-- ======================= 04 ======================= -->
+<section id="faults">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">04 — 常見代償</div>
+      <h2>肩胛骨「偷懶」或「搶戲」的三種樣子</h2>
+      <p class="lede"><b>代償</b><span class="term">（compensation）</span>是身體為了完成動作而改用別的方式。偶爾出現很正常，重點是「是不是每次都這樣、左右是否差很多、有沒有伴隨不舒服」。</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card fault-card">
+        <h3>聳肩</h3>
+        <dl>
+          <dt>看起來像</dt>
+          <dd>手才舉到一半，肩膀就往耳朵靠，脖子變短。</dd>
+          <dt>常見原因</dt>
+          <dd><ul>
+            <li>上斜方肌太搶戲，下斜方肌、前鋸肌出力不夠或太慢</li>
+            <li>肩關節本身卡卡的，只好用「抬高整個肩膀」補高度</li>
+            <li>拿的東西太重，或已經疲勞</li>
+            <li>肩膀不舒服時的自我保護</li>
+          </ul></dd>
+        </dl>
+        <button class="see-btn" type="button" data-see="shrug">在圖解看聳肩 ↑</button>
+      </div>
+
+      <div class="card fault-card">
+        <h3>翼狀肩胛 <span class="term">scapular winging</span></h3>
+        <dl>
+          <dt>看起來像</dt>
+          <dd>肩胛骨靠脊椎那側的邊緣（內側緣）從背上翹起來，像一片小翅膀；手<b>放下時</b>通常更明顯。</dd>
+          <dt>常見原因</dt>
+          <dd><ul>
+            <li>前鋸肌控制不足或耐力不夠（最常見）</li>
+            <li>胸小肌太緊，把肩胛骨往前拉</li>
+            <li>練到疲勞、動作太快</li>
+            <li>少數和神經有關：若是單側突然出現、伴隨明顯無力，請先就醫</li>
+          </ul></dd>
+        </dl>
+        <button class="see-btn" type="button" data-see="winging">在圖解看翼狀肩胛 ↑</button>
+      </div>
+
+      <div class="card fault-card">
+        <h3>肩胛前傾 <span class="term">anterior tilt</span></h3>
+        <dl>
+          <dt>看起來像</dt>
+          <dd>從側面看，肩胛骨上緣往前倒、下角往後翹；從背後看，下角那一點特別凸出。和「後傾」剛好相反。</dd>
+          <dt>常見原因</dt>
+          <dd><ul>
+            <li>胸小肌緊，把肩胛骨前端往下往前拉</li>
+            <li>長時間圓肩、駝背、低頭滑手機</li>
+            <li>下斜方肌、前鋸肌出力不足，帶不動後傾</li>
+          </ul></dd>
+        </dl>
+        <p class="term" style="margin:14px 0 0;">前傾從側面看最清楚，背後圖解中沒有另外模擬。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 05 ======================= -->
+<section id="lowering">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">05 — 放下比舉起更重要</div>
+      <h2>問題常常在「放下來」的時候才露餡</h2>
+      <p class="lede">
+        舉手時肌肉是一邊用力一邊縮短；放下時肌肉要一邊用力一邊被拉長，像下坡踩煞車，這叫<b>離心</b><span class="term">（eccentric，肌肉邊出力邊拉長）</span>。
+        煞車比油門難控制，所以肩胛骨控制不好時，最常在<b>放下的途中</b>被看出來。
+      </p>
+    </div>
+
+    <div class="phase-compare">
+      <div class="card">
+        <h3>舉起 <small>向心・踩油門</small></h3>
+        <p>大肌肉一起發力，動作比較快，小小的不穩容易被「衝」過去，看不太出來。</p>
+      </div>
+      <div class="card">
+        <h3>放下 <small>離心・踩煞車</small></h3>
+        <p>需要細緻控制。這時候比較容易看到：肩胛骨突然「掉」下來、內側緣翹起、左右不同步、途中一頓一頓的。</p>
+      </div>
+    </div>
+    <div class="callout"><b>觀察小技巧：</b>舉起用 2 秒、放下用 3 秒，請家人特別盯著「放下」那一段。在上方圖解切到「翼狀肩胛」再按播放，可以看到放下時翹得比舉起時多。</div>
+  </div>
+</section>
+
+<!-- ======================= 06 ======================= -->
+<section id="thoracic">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">06 — 駝背的影響</div>
+      <h2>背駝著，手就舉不高</h2>
+      <p class="lede">
+        <b>胸椎</b><span class="term">（背的中段、連著肋骨的那一段脊椎）</span>是肩胛骨的「地板」。
+        駝背時這塊地板往前彎，肩胛骨被帶著往前滑、往前傾，能往上轉、往後傾的空間就變少；
+        手要舉到最高時，胸椎也需要稍微伸直來幫忙。
+      </p>
+    </div>
+
+    <div class="card">
+      <svg viewBox="0 0 520 250" role="img" aria-label="側面對照：駝背坐時手只能舉到斜前方，坐直時手可以接近頭頂">
+        <text x="260" y="246" text-anchor="middle" font-size="11" fill="var(--ink-soft)">側面看・臉朝右</text>
+        <g>
+          <text x="130" y="22" text-anchor="middle" font-size="15" font-weight="700" fill="var(--villain)">駝背坐</text>
+          <line x1="40" y1="236" x2="240" y2="236" stroke="var(--rule)" stroke-width="2"/>
+          <rect x="90" y="190" width="80" height="8" rx="3" fill="var(--paper-deep)" stroke="var(--ink-soft)"/>
+          <line x1="96" y1="198" x2="96" y2="236" stroke="var(--ink-soft)" stroke-width="3"/>
+          <line x1="164" y1="198" x2="164" y2="236" stroke="var(--ink-soft)" stroke-width="3"/>
+          <path d="M120 186 L180 186 L184 234" fill="none" stroke="var(--ink-soft)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+          <line x1="132" y1="112" x2="132" y2="26" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="5 5"/>
+          <path d="M120 186 Q86 140 132 112" fill="none" stroke="var(--villain)" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="162" cy="104" r="15" fill="var(--card)" stroke="var(--villain)" stroke-width="4"/>
+          <line x1="132" y1="112" x2="178" y2="46" stroke="var(--villain)" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="132" cy="112" r="5" fill="var(--villain)"/>
+          <text x="186" y="92" font-size="13" fill="var(--ink-soft)">手卡在斜前方</text>
+        </g>
+        <g>
+          <text x="390" y="22" text-anchor="middle" font-size="15" font-weight="700" fill="var(--hero)">坐直</text>
+          <line x1="300" y1="236" x2="500" y2="236" stroke="var(--rule)" stroke-width="2"/>
+          <rect x="350" y="190" width="80" height="8" rx="3" fill="var(--paper-deep)" stroke="var(--ink-soft)"/>
+          <line x1="356" y1="198" x2="356" y2="236" stroke="var(--ink-soft)" stroke-width="3"/>
+          <line x1="424" y1="198" x2="424" y2="236" stroke="var(--ink-soft)" stroke-width="3"/>
+          <path d="M380 186 L440 186 L444 234" fill="none" stroke="var(--ink-soft)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+          <line x1="380" y1="110" x2="380" y2="26" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="5 5"/>
+          <path d="M380 186 Q372 146 380 110" fill="none" stroke="var(--hero)" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="397" cy="84" r="15" fill="var(--card)" stroke="var(--hero)" stroke-width="4"/>
+          <line x1="380" y1="110" x2="376" y2="30" stroke="var(--hero)" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="380" cy="110" r="5" fill="var(--hero)"/>
+          <text x="408" y="44" font-size="13" fill="var(--ink-soft)">手可以接近頭頂</text>
+        </g>
+      </svg>
+      <p class="fig-note" style="margin-top:6px;">示意圖。實際差多少因人而異。</p>
+    </div>
+
+    <div class="callout hero"><b>自己試試看：</b>坐在椅子上，先故意駝背、手往上舉到最高，記住高度；再坐直、胸口微微往上，重新舉一次。多數人坐直時會舉得更高、更輕鬆。如果差很多，練習清單裡的「坐姿胸椎伸展」可以一起練。</div>
+  </div>
+</section>
+
+<!-- ======================= 07 ======================= -->
+<section id="practice">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">07 — 自我檢查與入門練習</div>
+      <h2>先看看自己，再開始練</h2>
+      <p class="lede">這些檢查只是幫你「觀察」，不是診斷。看到不對稱或有疑問，可以拍下來帶去給教練或醫療人員看。</p>
+    </div>
+
+    <h3 style="font-size:21px; margin-bottom:6px;">自我檢查</h3>
+    <ol class="check-list">
+      <li>
+        <h4>背後觀察舉手（請家人看或錄影）</h4>
+        <p>穿貼身或露背的衣服，雙手從身體兩側慢慢舉到頭頂再放下，做 5 次。從背後看：</p>
+        <ul>
+          <li><b>對稱性：</b>兩邊肩胛骨轉的時間和幅度差不多嗎？</li>
+          <li><b>提早聳肩：</b>手還沒到肩膀高，肩膀就往耳朵靠？</li>
+          <li><b>放下時翼狀肩胛：</b>放下途中，內側緣有沒有翹起來？</li>
+          <li><b>中途卡頓：</b>某個高度突然一頓、抖一下，或需要繞一下才過得去？</li>
+        </ul>
+      </li>
+      <li>
+        <h4>靠牆舉手</h4>
+        <p>背靠牆站，腳跟離牆約一個腳掌，後腦、上背、臀部貼牆。手臂伸直往上舉，看看：</p>
+        <ul>
+          <li>手背或手臂能不能碰到牆？</li>
+          <li>碰牆時<b>腰不往前拱</b>（腰和牆之間的空隙沒有突然變大）</li>
+          <li><b>肋骨不往外翻</b>（前面肋骨下緣沒有突出）</li>
+        </ul>
+        <p style="margin-top:6px;">如果要靠拱腰、翻肋骨手才碰得到牆，代表肩膀或胸椎的活動度可能不夠，身體在借別的地方。</p>
+      </li>
+      <li>
+        <h4>找出卡住的角度</h4>
+        <p>慢慢舉手，記下<b>從哪個高度開始</b>不舒服或卡住（例如「平舉以上」「快到頭頂」），以及放下時是否也在同一段。可以用上方圖解的滑桿對照大概是幾度，下次比較有沒有變化。</p>
+      </li>
+      <li>
+        <h4>生活問句</h4>
+        <p>最近這些事有沒有變吃力？</p>
+        <ul>
+          <li>晾衣服、拿高處櫃子裡的東西</li>
+          <li>穿外套、把手伸進袖子</li>
+          <li>梳頭、綁頭髮、洗頭</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h3 style="font-size:21px; margin:38px 0 14px;">入門練習</h3>
+
+    <div class="drill">
+      <span class="badge">DRILL 01</span>
+      <h3>靠牆滑手 <span class="term">wall slide</span></h3>
+      <div class="cue">「手肘往牆上爬，肩胛骨往外繞到腋下」</div>
+      <ol>
+        <li>面對牆站，前臂貼牆，手肘約與肩同高、同寬（前臂下可墊毛巾比較好滑）。</li>
+        <li>前臂沿著牆慢慢往上滑，到不卡、不痛的高度停 1–2 秒。</li>
+        <li>慢慢滑回來，放下的速度比上去更慢。</li>
+      </ol>
+      <div class="meta">參考：8–10 下，2–3 組，依當天狀況調整。</div>
+      <div class="err"><b>常見錯誤：</b>肩膀往耳朵聳、腰往前拱、為了滑更高而硬推到痛、滑太快。</div>
+      <div class="elder"><b>長輩版：</b>高度只到肩膀附近也沒關係，先求動作平順，再慢慢往上。</div>
+    </div>
+
+    <div class="drill">
+      <span class="badge">DRILL 02</span>
+      <h3>推牆加推 <span class="term">wall push-up plus</span></h3>
+      <div class="cue">「把牆推遠，胸口往後退」</div>
+      <ol>
+        <li>面對牆，雙手與肩同高同寬推牆，手肘伸直但不鎖死，身體一直線。</li>
+        <li>手肘<b>不彎</b>，讓胸口往牆的方向沉一點點（兩片肩胛骨靠近）。</li>
+        <li>再用手把牆推遠，胸口往後退，感覺肩胛骨往外、往前繞到腋下。停 2 秒。</li>
+      </ol>
+      <div class="meta">參考：10–12 下，2–3 組。動作幅度很小是正常的。</div>
+      <div class="err"><b>常見錯誤：</b>手肘彎曲變成伏地挺身、腰往下塌、聳肩、頭往前伸。</div>
+      <div class="elder"><b>長輩版：</b>站得離牆近一點，降低難度。</div>
+    </div>
+
+    <div class="drill">
+      <span class="badge">DRILL 03</span>
+      <h3>坐姿胸椎伸展</h3>
+      <div class="cue">「胸口往天花板打開，腰不要跟著拱」</div>
+      <ol>
+        <li>坐在有椅背的椅子上，上背靠在椅背上緣附近，雙手輕扶後腦。</li>
+        <li>吸氣準備，吐氣時胸口往天花板方向打開，眼睛跟著往斜上方看，停 2–3 秒。</li>
+        <li>慢慢回到中間，正常呼吸，不憋氣。</li>
+      </ol>
+      <div class="meta">參考：5–8 下。</div>
+      <div class="err"><b>常見錯誤：</b>動的是腰不是上背（腰往前拱）、頭用力往後仰、憋氣。</div>
+      <div class="elder"><b>長輩版：</b>雙手交叉放在胸前，不抱頭，幅度小一點，椅子要穩、靠背要夠高。</div>
+    </div>
+
+    <div class="big-mistake">
+      <span class="kicker">最常見的提示錯誤</span>
+      <h3>舉手過頭時，一直「肩膀往後往下夾緊」</h3>
+      <p>
+        「肩膀往後往下」是很常聽到的提示，但如果手舉過頭時還一直用力夾，肩胛骨會被固定在<b>往下轉、往內收</b>的方向，
+        剛好跟舉手需要的「往上轉、往外繞」打架，反而卡住上轉，手更舉不高。
+      </p>
+      <p>
+        比較好的做法：手在低處（例如划船、拿東西前）可以先把肩膀放穩；手要舉過頭時，<b>讓肩胛骨跟著往外上方繞</b>，
+        只要不刻意聳到耳朵就好。
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>疼痛原則</h3>
+      <p style="margin-bottom:0;">用 0–10 分評估練習時的不舒服（0 是完全不痛，10 是無法忍受）：</p>
+      <div class="pain-scale" aria-hidden="true">
+        <span class="ok">0</span><span class="ok">1</span><span class="ok">2</span><span class="ok">3</span>
+        <span class="warn">4</span><span class="warn">5</span><span class="warn">6</span>
+        <span class="stop">7</span><span class="stop">8</span><span class="stop">9</span><span class="stop">10</span>
+      </div>
+      <div class="pain-legend"><span>0–3 分：可以繼續</span><span>超過 3 分：縮小範圍、放慢、減少次數；調整後仍超過就先停</span></div>
+      <p style="margin-top:14px;">可以繼續的條件：練習時<b>不超過 3 分</b>，而且<b>隔天沒有比較痛</b>。隔天變更痛，下次就減量。</p>
+      <p style="margin-bottom:4px;">出現以下情況，請<b>先就醫評估</b>，不要自己硬練：</p>
+      <div class="red-flags">
+        <span>夜間痛醒</span><span>手臂無力</span><span>手臂或手指麻木</span><span>跌倒或受傷後的疼痛</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="summary-card">
+      <div class="eyebrow">總結一句話</div>
+      <p>手舉高是<b>肩關節和肩胛骨一起合作</b>的結果，比例大約 2:1、因人而異。觀察重點是<b>放下的那一段</b>是否平順、左右是否相近；練習時讓肩胛骨<b>跟著往外上方繞</b>，而不是一直往後往下夾住。</p>
+    </div>
+    <p class="disclaimer">
+      本頁內容為運動教學與觀念說明，不能取代醫療診斷或治療。<b>疼痛持續請先就醫評估。</b><br>
+      © Lewin 教練
+    </p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const NS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs, parent){
+    const e = document.createElementNS(NS, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  const rad = d => d * Math.PI / 180;
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  const smooth = (a, b, x) => { const t = clamp((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); };
+  function rot(p, deg){
+    const r = rad(deg), c = Math.cos(r), s = Math.sin(r);
+    return [p[0] * c - p[1] * s, p[0] * s + p[1] * c];
+  }
+
+  /* ================= 互動圖解 ================= */
+  const MODES = {
+    normal: {
+      ratio: 1/3,
+      elev: a => 5 * (a / 180),
+      wing: () => 0,
+      title: '正常',
+      text: '肩胛骨平順地往上轉，內側緣一直貼著肋骨，肩膀高度變化不大。左右兩邊時間差不多。',
+      fault: false
+    },
+    shrug: {
+      ratio: 0.26,
+      elev: a => 5 * (a / 180) + 24 * smooth(30, 110, a),
+      wing: () => 0,
+      title: '聳肩',
+      text: '肩胛骨「往上提」多過「往上轉」，手才舉到一半肩膀就往耳朵靠。上轉不夠，肩關節得多做（數字為示意）。',
+      fault: true
+    },
+    winging: {
+      ratio: 0.25,
+      elev: a => 5 * (a / 180),
+      wing: (a, lowering) => (lowering ? 15 : 6) * Math.sin(rad(clamp(a, 0, 180))) + (lowering ? 3 : 1) * (a / 180),
+      title: '翼狀肩胛',
+      text: '肩胛骨內側緣離開肋骨翹起來，上轉也跟著不夠。放下時通常翹得更明顯，試試按「播放」。（數字為示意）',
+      fault: true
+    }
+  };
+
+  const stage = document.getElementById('stage');
+  const topView = document.getElementById('topView');
+  const slider = document.getElementById('armSlider');
+  const armOut = document.getElementById('armOut');
+  const ghOut = document.getElementById('ghOut');
+  const stOut = document.getElementById('stOut');
+  const ghBar = document.getElementById('ghBar');
+  const stBar = document.getElementById('stBar');
+  const ratioText = document.getElementById('ratioText');
+  const modeNote = document.getElementById('modeNote');
+  const phase = document.getElementById('phase');
+  const playBtn = document.getElementById('playBtn');
+
+  let mode = 'normal';
+  let arm = 0;
+  let lowering = false;
+
+  // geometry (back view)
+  const SPINE_X = 200;
+  const PIVOT = [263, 200];           // right scapula rotation center
+  const L_PIVOT = [2 * SPINE_X - PIVOT[0], PIVOT[1]];
+  // right scapula outline, local coords around PIVOT (person's right on viewer's right)
+  const SCAP = {
+    sup: [-33, -11],       // superior angle
+    supB: [0, -17],        // superior border
+    acro: [32, -21],       // acromion tip
+    glen: [27, -5],        // glenoid (shoulder socket)
+    lat: [9, 33],          // lateral border (curve control)
+    inf: [-25, 65],        // inferior angle
+    med: [-37, 27],        // medial border (curve control)
+    spineM: [-35, 3],      // spine of scapula, medial end
+    medPt: [-33, 26],      // point on the medial border
+  };
+  const ARM_LEN = 150;
+
+  function scapPath(pts){
+    const p = k => pts[k][0].toFixed(1) + ' ' + pts[k][1].toFixed(1);
+    return 'M' + p('sup') + ' L' + p('supB') + ' L' + p('acro') + ' L' + p('glen') +
+      ' Q' + p('lat') + ' ' + p('inf') + ' Q' + p('med') + ' ' + p('sup') + ' Z';
+  }
+  function transformScap(deg, origin, mirror, lift){
+    const out = {};
+    for (const k in SCAP){
+      let q = SCAP[k];
+      if (mirror) q = [-q[0], q[1]];
+      const r = rot(q, mirror ? deg : -deg);
+      out[k] = [origin[0] + r[0], origin[1] + r[1] - lift];
+    }
+    return out;
+  }
+  const f = n => n.toFixed(1);
+
+  function drawStage(){
+    const m = MODES[mode];
+    const st = arm * m.ratio;
+    const gh = arm - st;
+    const elev = m.elev(arm);
+    const wing = m.wing(arm, lowering);
+    const faultColor = 'var(--villain)';
+
+    stage.innerHTML = '';
+    const defs = el('defs', {}, stage);
+    const mk = el('marker', {id:'arrV', viewBox:'0 0 10 10', refX:'6', refY:'5', markerWidth:'6', markerHeight:'6', orient:'auto'}, defs);
+    el('path', {d:'M0 0 L10 5 L0 10 Z', fill:'var(--villain)'}, mk);
+
+    const R = transformScap(st, PIVOT, false, elev);
+    const Rrest = transformScap(0, PIVOT, false, 0);
+    const L = transformScap(0, L_PIVOT, true, 0);
+    const A = [R.acro[0] + 4, R.acro[1] + 4];
+
+    // left arm (resting)
+    const lStart = [2 * SPINE_X - (Rrest.glen[0] + 10), Rrest.glen[1] + 8];
+    el('line', {x1:lStart[0], y1:lStart[1], x2:lStart[0] - 4, y2:lStart[1] + ARM_LEN, stroke:'var(--body-fill)', 'stroke-width':26, 'stroke-linecap':'round'}, stage);
+    el('line', {x1:lStart[0], y1:lStart[1], x2:lStart[0] - 4, y2:lStart[1] + ARM_LEN, stroke:'var(--ink-soft)', 'stroke-width':1.2, opacity:.4}, stage);
+
+    // torso
+    const body = 'M185 172' +
+      ' C160 174 122 176 104 186' +
+      ' Q96 196 100 214' +
+      ' L118 252 C124 320 130 390 134 446' +
+      ' L266 446 C270 390 276 320 282 252' +
+      ' L300 214' +
+      ' Q' + f(A[0] + 6) + ' ' + f(A[1] + 6) + ' ' + f(A[0]) + ' ' + f(A[1]) +
+      ' C' + f(A[0] - 18) + ' ' + f(A[1] - 10) + ' 240 ' + f(174 - elev * 0.5) + ' 215 172 Z';
+    el('path', {d:body, fill:'var(--body-fill)', stroke:'var(--ink-soft)', 'stroke-width':1.4}, stage);
+    // neck & head
+    el('path', {d:'M186 176 L188 140 L212 140 L214 176', fill:'var(--body-fill)', stroke:'var(--ink-soft)', 'stroke-width':1.4}, stage);
+    el('circle', {cx:SPINE_X, cy:116, r:30, fill:'var(--body-fill)', stroke:'var(--ink-soft)', 'stroke-width':1.4}, stage);
+    el('path', {d:'M229 108 q8 8 0 18', fill:'none', stroke:'var(--ink-soft)', 'stroke-width':1.4}, stage);
+    el('path', {d:'M171 108 q-8 8 0 18', fill:'none', stroke:'var(--ink-soft)', 'stroke-width':1.4}, stage);
+
+    // spine
+    el('line', {x1:SPINE_X, y1:176, x2:SPINE_X, y2:440, stroke:'var(--ink-soft)', 'stroke-width':1.2, 'stroke-dasharray':'3 6', opacity:.7}, stage);
+    for (let y = 184; y < 436; y += 20){
+      el('line', {x1:SPINE_X - 4, y1:y, x2:SPINE_X + 4, y2:y, stroke:'var(--ink-soft)', 'stroke-width':1.2, opacity:.5}, stage);
+    }
+
+    // left scapula (rest)
+    el('path', {d:scapPath(L), fill:'var(--bone)', stroke:'var(--ink-soft)', 'stroke-width':1.5}, stage);
+    el('line', {x1:L.spineM[0], y1:L.spineM[1], x2:L.acro[0], y2:L.acro[1], stroke:'var(--ink-soft)', 'stroke-width':2, opacity:.7}, stage);
+
+    // right scapula ghost (rest)
+    if (arm > 2){
+      el('path', {d:scapPath(Rrest), fill:'none', stroke:'var(--ink-soft)', 'stroke-width':1.3, 'stroke-dasharray':'4 4', opacity:.7}, stage);
+    }
+
+    // winging shadow
+    if (wing > 0.5){
+      const sh = wing * 0.9;
+      const d = 'M' + f(R.sup[0]) + ' ' + f(R.sup[1]) +
+        ' Q' + f(R.med[0]) + ' ' + f(R.med[1]) + ' ' + f(R.inf[0]) + ' ' + f(R.inf[1]) +
+        ' L' + f(R.inf[0] - sh) + ' ' + f(R.inf[1] + 2) +
+        ' Q' + f(R.med[0] - sh * 1.3) + ' ' + f(R.med[1]) + ' ' + f(R.sup[0] - sh * 0.6) + ' ' + f(R.sup[1] + 2) + ' Z';
+      el('path', {d, fill:'rgba(0,0,0,0.22)'}, stage);
+    }
+
+    // right scapula
+    const scapStroke = m.fault ? faultColor : 'var(--hero)';
+    el('path', {d:scapPath(R), fill:'var(--bone)', stroke:scapStroke, 'stroke-width':2.4, 'stroke-linejoin':'round'}, stage);
+    el('line', {x1:R.spineM[0], y1:R.spineM[1], x2:R.acro[0], y2:R.acro[1], stroke:scapStroke, 'stroke-width':2.4, 'stroke-linecap':'round'}, stage);
+    if (wing > 0.5){
+      el('path', {d:'M' + f(R.sup[0]) + ' ' + f(R.sup[1]) + ' Q' + f(R.med[0]) + ' ' + f(R.med[1]) + ' ' + f(R.inf[0]) + ' ' + f(R.inf[1]),
+        fill:'none', stroke:faultColor, 'stroke-width':2 + wing * 0.35, 'stroke-linecap':'round'}, stage);
+    }
+
+    // right arm
+    const g = R.glen;
+    const dir = [Math.sin(rad(arm)), Math.cos(rad(arm))];
+    const start = [g[0] + 10, g[1] + 8];
+    const end = [start[0] + dir[0] * ARM_LEN, start[1] + dir[1] * ARM_LEN];
+    el('line', {x1:start[0], y1:start[1], x2:end[0], y2:end[1], stroke:'var(--body-fill)', 'stroke-width':26, 'stroke-linecap':'round'}, stage);
+    el('line', {x1:start[0], y1:start[1], x2:end[0], y2:end[1], stroke:'var(--slate)', 'stroke-width':2.4, 'stroke-linecap':'round'}, stage);
+    el('circle', {cx:start[0], cy:start[1], r:8, fill:'var(--bone)', stroke:'var(--slate)', 'stroke-width':2}, stage);
+
+    // arm angle arc (measured from the hanging position)
+    if (arm > 4){
+      const r0 = 44;
+      const a0 = [start[0], start[1] + r0];
+      const a1 = [start[0] + dir[0] * r0, start[1] + dir[1] * r0];
+      el('line', {x1:start[0], y1:start[1], x2:start[0], y2:start[1] + r0 + 10, stroke:'var(--slate)', 'stroke-width':1.2, 'stroke-dasharray':'3 3'}, stage);
+      el('path', {d:`M${f(a0[0])} ${f(a0[1])} A${r0} ${r0} 0 0 0 ${f(a1[0])} ${f(a1[1])}`, fill:'none', stroke:'var(--slate)', 'stroke-width':2}, stage);
+    }
+
+    // scapula rotation label
+    if (st > 2){
+      const t = el('text', {x:f(R.inf[0] - 4), y:f(R.inf[1] + 24), 'font-size':14, 'font-weight':700, fill:scapStroke, 'text-anchor':'middle'}, stage);
+      t.textContent = '上轉 ' + Math.round(st) + '°';
+    }
+
+    // fault callouts
+    if (mode === 'shrug' && elev > 8){
+      el('path', {d:`M${f(A[0] - 14)} ${f(A[1] - 8)} Q${f(A[0] - 18)} ${f(A[1] - 40)} 236 126`, fill:'none', stroke:faultColor, 'stroke-width':2, 'marker-end':'url(#arrV)'}, stage);
+      const t = el('text', {x:16, y:62, 'font-size':15, 'font-weight':700, fill:faultColor}, stage);
+      t.textContent = '▲ 肩膀往耳朵靠';
+    }
+    if (mode === 'winging' && wing > 4){
+      const t = el('text', {x:16, y:62, 'font-size':15, 'font-weight':700, fill:faultColor}, stage);
+      t.textContent = '▲ 內側緣翹起' + (lowering ? '（放下時更明顯）' : '');
+    }
+
+    const lt = el('text', {x:f(L.inf[0] + 6), y:f(L.inf[1] + 24), 'font-size':12.5, fill:'var(--ink-soft)', 'text-anchor':'middle'}, stage);
+    lt.textContent = '對照：放鬆側';
+
+    drawTop(wing, st);
+
+    // readouts
+    armOut.textContent = Math.round(arm) + '°';
+    ghOut.textContent = Math.round(gh) + '°';
+    stOut.textContent = Math.round(st) + '°';
+    const ghPct = (1 - m.ratio) * 100;
+    ghBar.style.width = ghPct + '%';
+    stBar.style.width = (100 - ghPct) + '%';
+    const r = (1 - m.ratio) / m.ratio;
+    ratioText.textContent = mode === 'normal'
+      ? '肩關節：肩胛骨 ≈ 2 : 1（平均值，因人而異）'
+      : '肩關節：肩胛骨 ≈ ' + r.toFixed(1) + ' : 1（示意：肩胛骨轉不夠，肩關節得多做）';
+  }
+
+  function drawTop(wing, st){
+    topView.innerHTML = '';
+    const cx = 112, cy = 56, rx = 92, ry = 42;
+    el('ellipse', {cx, cy, rx, ry, fill:'var(--paper)', stroke:'var(--ink-soft)', 'stroke-width':1.5}, topView);
+    el('circle', {cx, cy:cy + ry - 4, r:5, fill:'var(--ink-soft)'}, topView);
+    const tl = el('text', {x:cx, y:cy - 6, 'font-size':12, fill:'var(--ink-soft)', 'text-anchor':'middle'}, topView);
+    tl.textContent = '胸口（前）';
+    const bl = el('text', {x:8, y:124, 'font-size':12, fill:'var(--ink-soft)'}, topView);
+    bl.textContent = '背（後）';
+    const ptOn = deg => [cx + rx * Math.cos(rad(deg)), cy + ry * Math.sin(rad(deg))];
+    const medDeg = 76, latDeg = 24 - st * 0.08;
+    const lat = ptOn(latDeg);
+    const medOn = ptOn(medDeg);
+    const lift = wing * 1.3;               // winging: medial end leaves the ribs
+    const med = [medOn[0] - lift * 0.2, medOn[1] + lift];
+    const mid = ptOn((medDeg + latDeg) / 2);
+    const ctrl = [mid[0] + 6, mid[1] + 8 + lift * 0.4];
+    const bad = MODES[mode].fault;
+    el('path', {d:`M${f(med[0])} ${f(med[1])} Q${f(ctrl[0])} ${f(ctrl[1])} ${f(lat[0])} ${f(lat[1])}`, fill:'none',
+      stroke: bad ? 'var(--villain)' : 'var(--hero)', 'stroke-width':6, 'stroke-linecap':'round'}, topView);
+    let label, color;
+    if (wing > 3){
+      el('line', {x1:f(medOn[0]), y1:f(medOn[1]), x2:f(med[0]), y2:f(med[1]), stroke:'var(--villain)', 'stroke-width':1.4, 'stroke-dasharray':'2 3'}, topView);
+      label = '內側緣離開肋骨'; color = 'var(--villain)';
+    } else {
+      label = '貼著肋骨'; color = bad ? 'var(--villain)' : 'var(--hero)';
+    }
+    const t = el('text', {x:236, y:124, 'font-size':12, 'font-weight':700, fill:color, 'text-anchor':'end'}, topView);
+    t.textContent = label;
+  }
+
+  function setMode(next){
+    mode = next;
+    document.querySelectorAll('.mode-btn').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
+    const m = MODES[mode];
+    modeNote.className = 'mode-note' + (m.fault ? ' fault' : '');
+    modeNote.innerHTML = '<b>' + m.title + '</b>' + m.text;
+    drawStage();
+  }
+
+  slider.addEventListener('input', () => {
+    stopPlay();
+    const v = Number(slider.value);
+    lowering = v < arm;
+    arm = v;
+    phase.innerHTML = lowering ? '<b>放下中</b>（離心）' : '舉起中';
+    drawStage();
+  });
+
+  document.querySelectorAll('.mode-btn').forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
+  document.querySelectorAll('.see-btn').forEach(b => b.addEventListener('click', () => {
+    setMode(b.dataset.see);
+    document.getElementById('lab').scrollIntoView({behavior:'smooth', block:'start'});
+  }));
+
+  // play: raise 2.4s, hold, lower 3.6s
+  let playing = false, raf = null, t0 = null;
+  const UP = 2400, HOLD = 500, DOWN = 3600, TOTAL = UP + HOLD + DOWN;
+  function frame(ts){
+    if (!t0) t0 = ts;
+    const e = (ts - t0) % TOTAL;
+    if (e < UP){
+      lowering = false; arm = 180 * smooth(0, 1, e / UP);
+      phase.textContent = '舉起中（向心）';
+    } else if (e < UP + HOLD){
+      lowering = false; arm = 180;
+      phase.textContent = '頭頂停一下';
+    } else {
+      lowering = true; arm = 180 * (1 - smooth(0, 1, (e - UP - HOLD) / DOWN));
+      phase.innerHTML = '<b>放下中</b>（離心，比較容易看出問題）';
+    }
+    slider.value = Math.round(arm);
+    drawStage();
+    raf = requestAnimationFrame(frame);
+  }
+  function stopPlay(){
+    if (!playing) return;
+    playing = false; cancelAnimationFrame(raf); t0 = null;
+    playBtn.textContent = '▶ 播放舉起與放下';
+  }
+  playBtn.addEventListener('click', () => {
+    if (playing){ stopPlay(); return; }
+    playing = true; t0 = null; arm = 0;
+    playBtn.textContent = '⏸ 暫停';
+    raf = requestAnimationFrame(frame);
+  });
+
+  setMode('normal');
+
+  /* ================= 力偶圖 ================= */
+  const coupleSvg = document.getElementById('coupleSvg');
+  const coupleList = document.getElementById('coupleList');
+  const coupleGrid = document.getElementById('coupleGrid');
+  const BIG = {}; // scaled scapula for couple diagram
+  const S = 2.5, O = [190, 138];
+  for (const k in SCAP) BIG[k] = [O[0] + SCAP[k][0] * S, O[1] + SCAP[k][1] * S];
+
+  const GROUPS = {
+    up: {
+      color: 'var(--hero)',
+      result: '合力：肩關節的碗口轉向上',
+      muscles: [
+        {name:'上斜方肌', en:'upper trapezius', where:'從後頸到肩膀頂端的那一塊',
+          job:'把肩胛骨外上角（肩峰）往上、往內拉。', from:'acro', vec:[-0.5, -1], lab:[-14, -4]},
+        {name:'下斜方肌', en:'lower trapezius', where:'背中段、往脊椎斜下去的那條',
+          job:'把肩胛棘靠脊椎那一端往下拉，和上斜方肌一上一下，讓肩胛骨轉起來。', from:'spineM', vec:[-0.45, 1], lab:[-14, 6]},
+        {name:'前鋸肌', en:'serratus anterior', where:'貼在肋骨側邊、像鋸齒一樣',
+          job:'把下角往外、往前拉，並讓肩胛骨貼住肋骨。翼狀肩胛最常跟它有關。', from:'inf', vec:[1, 0.05], lab:[14, 4]}
+      ]
+    },
+    down: {
+      color: 'var(--slate)',
+      result: '合力：把肩胛骨轉回原位（放下時的煞車）',
+      muscles: [
+        {name:'菱形肌', en:'rhomboids', where:'肩胛骨和脊椎之間',
+          job:'把內側緣往上、往脊椎拉。', from:'medPt', vec:[-1, -0.55], lab:[-14, 4]},
+        {name:'提肩胛肌', en:'levator scapulae', where:'脖子側後方到肩胛骨上角',
+          job:'把肩胛骨上角往上拉，太緊時也會讓人覺得脖子很硬。', from:'sup', vec:[-0.25, -1], lab:[-14, -2]},
+        {name:'胸小肌', en:'pectoralis minor', where:'在胸前深層，拉著肩胛骨前端的小突起（喙突）',
+          job:'把肩胛骨前端往下、往前拉；太緊時容易造成肩胛前傾。', from:'glen', vec:[0.35, 1], lab:[12, 6], front:true}
+      ]
+    }
+  };
+
+  function arrowMarker(defs, id, color){
+    const m = el('marker', {id, viewBox:'0 0 10 10', refX:'6', refY:'5', markerWidth:'5', markerHeight:'5', orient:'auto'}, defs);
+    el('path', {d:'M0 0 L10 5 L0 10 Z', fill:color}, m);
+  }
+
+  function drawCouple(key){
+    const G = GROUPS[key];
+    coupleSvg.innerHTML = '';
+    const defs = el('defs', {}, coupleSvg);
+    arrowMarker(defs, 'cArr', G.color);
+    // spine reference
+    el('line', {x1:70, y1:50, x2:70, y2:320, stroke:'var(--ink-soft)', 'stroke-width':1.2, 'stroke-dasharray':'3 6', opacity:.7}, coupleSvg);
+    const sl = el('text', {x:76, y:320, 'font-size':11, fill:'var(--ink-soft)'}, coupleSvg); sl.textContent = '脊椎';
+    el('path', {d:scapPath(BIG), fill:'var(--bone)', stroke:'var(--ink-soft)', 'stroke-width':2}, coupleSvg);
+    el('line', {x1:BIG.spineM[0], y1:BIG.spineM[1], x2:BIG.acro[0], y2:BIG.acro[1], stroke:'var(--ink-soft)', 'stroke-width':3, 'stroke-linecap':'round'}, coupleSvg);
+    const gl = el('text', {x:BIG.glen[0] + 10, y:BIG.glen[1] + 22, 'font-size':11, fill:'var(--ink-soft)'}, coupleSvg); gl.textContent = '肩關節';
+
+    G.muscles.forEach((m, i) => {
+      const p = BIG[m.from];
+      const len = 44;
+      const n = Math.hypot(m.vec[0], m.vec[1]);
+      const e = [p[0] + m.vec[0] / n * len, p[1] + m.vec[1] / n * len];
+      el('circle', {cx:p[0], cy:p[1], r:5, fill:G.color}, coupleSvg);
+      const attrs = {x1:p[0], y1:p[1], x2:e[0], y2:e[1], stroke:G.color, 'stroke-width':4, 'stroke-linecap':'round', 'marker-end':'url(#cArr)'};
+      if (m.front) attrs['stroke-dasharray'] = '7 5';
+      el('line', attrs, coupleSvg);
+      const c = el('circle', {cx:e[0] + m.lab[0], cy:e[1] + m.lab[1], r:11, fill:G.color}, coupleSvg);
+      const t = el('text', {x:e[0] + m.lab[0], y:e[1] + m.lab[1] + 4.5, 'font-size':13, 'font-weight':700, fill:'var(--paper)', 'text-anchor':'middle'}, coupleSvg);
+      t.textContent = String(i + 1);
+    });
+    const rt = el('text', {x:170, y:22, 'font-size':13, 'font-weight':700, fill:G.color, 'text-anchor':'middle'}, coupleSvg);
+    rt.textContent = G.result;
+    if (key === 'down'){
+      const ft = el('text', {x:330, y:320, 'text-anchor':'end', 'font-size':11, fill:'var(--ink-soft)'}, coupleSvg);
+      ft.textContent = '虛線＝在身體前側';
+    }
+
+    coupleGrid.classList.toggle('down', key === 'down');
+    coupleList.innerHTML = '<ul class="muscle-list">' + G.muscles.map((m, i) =>
+      `<li><span class="mnum">${i + 1}</span><span class="mname">${m.name}</span> <span class="term">${m.en}・${m.where}</span><p>${m.job}</p></li>`
+    ).join('') + '</ul>';
+    document.querySelectorAll('.tog-btn').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.group === key)));
+  }
+  document.querySelectorAll('.tog-btn').forEach(b => b.addEventListener('click', () => drawCouple(b.dataset.group)));
+  drawCouple('up');
+})();
+</script>
+</body>
+</html>
