@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>硬舉動作模式比較｜髖關節主導與代償模式</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4F6F2;
+    --panel:#FFFFFF;
+    --ink:#1B231E;
+    --muted:#6B7568;
+    --line:#DEE3D9;
+    --teal:#0E6B5C;
+    --teal-soft:#E4F1EC;
+    --coral:#B5502F;
+    --coral-soft:#FBEAE3;
+    --amber:#8A6D1E;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Noto Sans TC', sans-serif;
+    padding:28px 16px 60px;
+  }
+  .wrap{max-width:980px;margin:0 auto;}
+  .eyebrow{
+    font-size:12px;letter-spacing:.14em;color:var(--muted);
+    text-transform:uppercase;margin-bottom:8px;font-weight:700;
+  }
+  h1{
+    font-family:'Noto Serif TC', serif;
+    font-size:clamp(22px,3.4vw,32px);
+    font-weight:700;
+    margin:0 0 10px;
+    line-height:1.35;
+  }
+  p.lede{
+    color:var(--muted);
+    font-size:14.5px;
+    line-height:1.75;
+    max-width:70ch;
+    margin:0 0 26px;
+  }
+  .panel-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:20px 22px 24px;
+    margin-bottom:20px;
+  }
+  .controls{
+    display:flex;flex-wrap:wrap;gap:18px 26px;align-items:flex-end;
+    padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid var(--line);
+  }
+  .ctrl-group{display:flex;flex-direction:column;gap:6px;min-width:150px;}
+  .ctrl-group label{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.02em;}
+  select{
+    font-family:inherit;font-size:14px;padding:8px 10px;border-radius:8px;
+    border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;
+  }
+  .slider-row{display:flex;align-items:center;gap:10px;}
+  input[type=range]{width:180px;accent-color:var(--teal);}
+  #playBtn{
+    font-family:inherit;font-size:13.5px;font-weight:700;
+    background:var(--teal);color:#fff;border:none;border-radius:8px;
+    padding:10px 18px;cursor:pointer;white-space:nowrap;
+  }
+  #playBtn:hover{background:#0a5449;}
+  .checkbox-row{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);}
+  .checkbox-row input{accent-color:var(--teal);width:15px;height:15px;}
+  .tpos{font-variant-numeric:tabular-nums;color:var(--muted);font-size:12px;width:34px;text-align:right;}
+
+  .diagram-titles{display:flex;font-size:13.5px;margin-bottom:2px;}
+  .diagram-titles > div{flex:1;text-align:center;}
+  .diagram-titles .left b{color:var(--teal);}
+  .diagram-titles .right b{color:var(--coral);}
+  .diagram-titles small{display:block;color:var(--muted);font-weight:400;margin-top:1px;}
+
+  svg{width:100%;height:auto;display:block;}
+
+  .legend{
+    display:flex;justify-content:center;gap:26px;margin-top:6px;font-size:12.5px;color:var(--muted);flex-wrap:wrap;
+  }
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .swatch{width:16px;height:3px;border-radius:2px;display:inline-block;}
+
+  table{width:100%;border-collapse:collapse;margin-top:4px;font-size:13.5px;}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);}
+  th{color:var(--muted);font-weight:700;font-size:12px;letter-spacing:.02em;}
+  td.metric{color:var(--muted);width:34%;}
+  td.ref{color:var(--teal);font-weight:600;}
+  td.fault{font-weight:600;}
+  td.fault.diff{color:var(--coral);}
+
+  .explain{
+    display:grid;grid-template-columns:1fr;gap:14px;
+  }
+  @media(min-width:760px){ .explain{grid-template-columns:1fr 1fr 1fr;} }
+  .explain .block h3{
+    font-size:12px;letter-spacing:.06em;color:var(--coral);
+    text-transform:uppercase;margin:0 0 6px;font-weight:700;
+  }
+  .explain .block p{margin:0;font-size:13.5px;line-height:1.75;color:var(--ink);}
+
+  .note{font-size:12px;color:var(--muted);margin-top:18px;line-height:1.7;}
+  footer{text-align:center;font-size:12px;color:var(--muted);margin-top:30px;}
+</style>
+</head>
+<body>
+<a href="../" style="position:fixed;top:12px;left:12px;z-index:9999;font:700 14px 'Noto Sans TC',sans-serif;background:rgba(38,48,42,.88);color:#fff;text-decoration:none;padding:8px 14px;border-radius:999px;">← 教材總庫</a>
+<div class="wrap">
+
+  <div class="eyebrow">動作模式教學圖解</div>
+  <h1>硬舉動作模式比較：髖關節主導 vs. 常見代償模式</h1>
+  <p class="lede">
+    以「足底固定、槓鈴終點高度相同」為共同拘束條件，比較標準的髖關節主導（hip hinge）模式，
+    與三種教學現場常見的代償模式：膝關節主導、腰椎屈曲（駝背）、腰椎過度前凸。
+    圖解為簡化示意模型，用於說明動作邏輯與教練提示，非精確人體測量數據。
+  </p>
+
+  <div class="panel-card">
+    <div class="controls">
+      <div class="ctrl-group">
+        <label>比較的代償模式</label>
+        <select id="patternSelect"></select>
+      </div>
+      <div class="ctrl-group">
+        <label>動作進度</label>
+        <div class="slider-row">
+          <button id="playBtn">▶ 播放下降</button>
+          <input type="range" id="tSlider" min="0" max="100" value="0">
+          <span class="tpos" id="tLabel">0%</span>
+        </div>
+      </div>
+      <div class="ctrl-group">
+        <label>&nbsp;</label>
+        <div class="checkbox-row">
+          <input type="checkbox" id="overlayChk">
+          <label for="overlayChk" style="font-weight:400;">在右側疊加標準模式作為參考線</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="diagram-titles">
+      <div class="left"><b>股關節主導</b><small>標準模式・維持脊椎中立</small></div>
+      <div class="right" id="rightTitle"><b>—</b><small>—</small></div>
+    </div>
+
+    <svg id="stage" viewBox="0 0 820 640" xmlns="http://www.w3.org/2000/svg"></svg>
+
+    <div class="legend">
+      <span><i class="swatch" style="background:var(--teal)"></i>髖關節主導（標準）</span>
+      <span><i class="swatch" style="background:var(--coral)"></i>所選代償模式</span>
+      <span id="overlayLegend" style="display:none;"><i class="swatch" style="background:#9AA79E;border-top:2px dashed #9AA79E;height:0;"></i>標準模式疊加參考</span>
+    </div>
+  </div>
+
+  <div class="panel-card">
+    <table>
+      <thead>
+        <tr><th>指標</th><th>髖關節主導（標準）</th><th id="faultColHead">代償模式</th></tr>
+      </thead>
+      <tbody id="metricsBody"></tbody>
+    </table>
+  </div>
+
+  <div class="panel-card">
+    <div class="explain">
+      <div class="block"><h3>成因</h3><p id="expCause"></p></div>
+      <div class="block"><h3>風險</h3><p id="expRisk"></p></div>
+      <div class="block"><h3>教練提示</h3><p id="expCue"></p></div>
+    </div>
+  </div>
+
+  <p class="note">
+    圖解說明：模型以踝關節為固定軸心，膝、髖、肩、頭與槓鈴位置依動作進度線性插值計算；
+    脊椎以髖至肩的曲線表示，直線代表中立、外凸代表屈曲（駝背）、內凹代表過度伸展（過度前凸）。
+    僅作教學示意，實際個案應以現場觀察與觸診評估為準。
+  </p>
+
+  <footer>動作模式教學圖解工具</footer>
+</div>
+
+<script>
+const svgNS = "http://www.w3.org/2000/svg";
+const stage = document.getElementById('stage');
+
+// ---- shared standing pose (t=0), panel-local coordinates ----
+const STANDING = { knee:[150,430], hip:[150,300], shoulder:[150,200], head:[150,165], bar:[180,300] };
+const ANKLE = [150,560];
+const TOE = [195,568];
+
+// ---- reference (correct) bottom pose ----
+const REFERENCE = {
+  name: '股關節主導（標準模式）',
+  color: 'var(--teal-css)',
+  bottom: { knee:[165,460], hip:[60,380], shoulder:[140,220], head:[160,193], bar:[155,545] },
+  curve: 0
+};
+
+// ---- fault patterns ----
+const PATTERNS = {
+  knee: {
+    label: '膝關節主導（類深蹲代償）',
+    short: '膝主導・類深蹲代償',
+    bottom: { knee:[230,470], hip:[150,410], shoulder:[150,250], head:[150,220], bar:[210,530] },
+    curve: 0,
+    metrics: {
+      hipShift: ['大', '小', true],
+      kneeShift: ['小', '大', true],
+      trunkLean: ['大（髖鉸鏈）', '小（類似深蹲）', true],
+      spine: ['中立', '中立', false],
+      barPath: ['貼近身體，垂直下降', '繞過膝蓋前方，明顯前移', true]
+    },
+    cause: '學員把硬舉做成「蹲」的模式：髖關節活動度或後側鏈柔軟度不足，加上核心穩定性不夠，導致下降時膝蓋率先大幅前移，取代髖關節後移。',
+    risk: '股四頭肌代償髖伸肌群，臀部與腿後肌訓練效益下降；槓鈴為了繞過前移的膝蓋而偏離身體，力臂拉長，下背與膝蓋承受的負荷都會增加。',
+    cue: '引導「先坐髖後推」而非「蹲低」，可用「用臀部去頂後方的門把」之類的意象。若髖關節活動度確實有限，先加強髖屈肌與腿後肌柔軟度，再回頭練動作模式。'
+  },
+  flexion: {
+    label: '腰椎屈曲／駝背',
+    short: '腰椎屈曲（駝背）',
+    bottom: { knee:[165,460], hip:[60,380], shoulder:[150,242], head:[178,228], bar:[168,556] },
+    curve: 1,
+    metrics: {
+      hipShift: ['大', '大（相近）', false],
+      kneeShift: ['小', '小（相近）', false],
+      trunkLean: ['大（髖鉸鏈）', '大，但由腰椎代償彎曲', true],
+      spine: ['中立', '屈曲（圓背）', true],
+      barPath: ['貼近身體，垂直下降', '因圓背而略微遠離身體', true]
+    },
+    cause: '核心（豎脊肌、腹內壓）穩定能力不足以對抗負荷造成的屈曲力矩，或髖關節、腿後肌柔軟度不足，迫使腰椎代償彎曲以順利抓握到槓鈴。',
+    risk: '脊椎在屈曲下承受的剪力明顯增加，是下背受傷（如椎間盤相關問題）風險最高的型態之一，尤其在接近力竭或使用超出控制範圍的負荷時更明顯。',
+    cue: '起槓前先建立「中立脊椎」感覺（腹內壓＋輕微挺胸）。必要時把起始高度墊高（架高硬舉／箱式硬舉）、降低負荷，並優先加強髖關節鉸鏈能力，如羅馬尼亞硬舉、早安式訓練。'
+  },
+  lordosis: {
+    label: '腰椎過度前凸',
+    short: '腰椎過度前凸',
+    bottom: { knee:[165,460], hip:[60,380], shoulder:[132,213], head:[146,178], bar:[150,545] },
+    curve: -1,
+    metrics: {
+      hipShift: ['大', '大（相近）', false],
+      kneeShift: ['小', '小（相近）', false],
+      trunkLean: ['大（髖鉸鏈）', '大（相近）', false],
+      spine: ['中立', '過度伸展（骨盆過度前傾）', true],
+      barPath: ['貼近身體，垂直下降', '路徑接近，但下背過度伸展代償', true]
+    },
+    cause: '學員過度追求「挺胸」「用力弓背」的視覺提示，導致骨盆過度前傾、腰椎過度伸展。常見於初學者為了避免駝背而矯枉過正，或誤把「中立脊椎」理解成「腰椎後彎、胸挺到底」。',
+    risk: '方向雖與駝背相反，過度伸展一樣讓腰椎偏離中立區間，會增加小面關節（facet joint）的擠壓負荷，長期可能造成下背緊繃或痠痛，尤其在反覆訓練下更容易累積。',
+    cue: '提示語改成「肋骨下沉、對齊骨盆」而不是一味「挺胸」。可搭配觸覺回饋——教練手放在學員下背，感受是否過度反弓，協助學員建立真正的中立脊椎感覺。'
+  }
+};
+
+const METRIC_LABELS = {
+  hipShift: '髖關節後移幅度',
+  kneeShift: '膝關節前移幅度',
+  trunkLean: '軀幹前傾方式',
+  spine: '腰椎狀態',
+  barPath: '槓鈴移動軌跡'
+};
+
+// ---- CSS var resolution helper ----
+function cssVar(name){
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+const COLOR_TEAL = '#0E6B5C';
+const COLOR_CORAL = '#B5502F';
+const COLOR_GREY = '#9AA79E';
+
+function lerp(a,b,t){ return a + (b-a)*t; }
+function lerpPt(a,b,t){ return [lerp(a[0],b[0],t), lerp(a[1],b[1],t)]; }
+function ease(t){ return t<0.5 ? 2*t*t : -1+(4-2*t)*t; }
+
+function computePose(bottom, curveTarget, t){
+  const e = ease(t);
+  return {
+    knee: lerpPt(STANDING.knee, bottom.knee, e),
+    hip: lerpPt(STANDING.hip, bottom.hip, e),
+    shoulder: lerpPt(STANDING.shoulder, bottom.shoulder, e),
+    head: lerpPt(STANDING.head, bottom.head, e),
+    bar: lerpPt(STANDING.bar, bottom.bar, e),
+    curve: curveTarget * e
+  };
+}
+
+function spineControlPoint(hip, shoulder, curve){
+  const mx = (hip[0]+shoulder[0])/2;
+  const my = (hip[1]+shoulder[1])/2;
+  const dx = shoulder[0]-hip[0], dy = shoulder[1]-hip[1];
+  const len = Math.hypot(dx,dy) || 1;
+  // perpendicular unit vector
+  const px = -dy/len, py = dx/len;
+  const amount = 46 * curve;
+  return [mx + px*amount, my + py*amount];
+}
+
+function el(tag, attrs){
+  const e = document.createElementNS(svgNS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  return e;
+}
+
+function drawFigure(group, pose, offsetX, color, opts){
+  opts = opts || {};
+  const dash = opts.dash ? '6 5' : null;
+  const width = opts.width || 5;
+  const opacity = opts.opacity != null ? opts.opacity : 1;
+
+  const ankle = [ANKLE[0]+offsetX, ANKLE[1]];
+  const toe = [TOE[0]+offsetX, TOE[1]];
+  const knee = [pose.knee[0]+offsetX, pose.knee[1]];
+  const hip = [pose.hip[0]+offsetX, pose.hip[1]];
+  const shoulder = [pose.shoulder[0]+offsetX, pose.shoulder[1]];
+  const head = [pose.head[0]+offsetX, pose.head[1]];
+  const bar = [pose.bar[0]+offsetX, pose.bar[1]];
+  const ctrl = spineControlPoint(hip, shoulder, pose.curve);
+
+  const lineStyle = { stroke: color, 'stroke-width': width, 'stroke-linecap':'round', fill:'none', opacity };
+  if (dash) lineStyle['stroke-dasharray'] = dash;
+
+  // foot
+  group.appendChild(el('line', Object.assign({x1:ankle[0],y1:ankle[1],x2:toe[0],y2:toe[1]}, lineStyle)));
+  // shank
+  group.appendChild(el('line', Object.assign({x1:ankle[0],y1:ankle[1],x2:knee[0],y2:knee[1]}, lineStyle)));
+  // thigh
+  group.appendChild(el('line', Object.assign({x1:knee[0],y1:knee[1],x2:hip[0],y2:hip[1]}, lineStyle)));
+  // spine (curve)
+  group.appendChild(el('path', Object.assign({d:`M ${hip[0]} ${hip[1]} Q ${ctrl[0]} ${ctrl[1]} ${shoulder[0]} ${shoulder[1]}`}, lineStyle)));
+  // neck
+  group.appendChild(el('line', Object.assign({x1:shoulder[0],y1:shoulder[1],x2:head[0],y2:head[1]}, lineStyle)));
+  // arm to bar
+  group.appendChild(el('line', Object.assign({x1:shoulder[0],y1:shoulder[1],x2:bar[0],y2:bar[1]}, lineStyle)));
+  // head
+  group.appendChild(el('circle', {cx:head[0],cy:head[1]-22,r:20, fill:'none', stroke:color,'stroke-width':width,opacity}));
+  // recompute head center attach point already offset by -22 above for the circle only visually; adjust neck line to circle edge
+  // bar
+  group.appendChild(el('circle', {cx:bar[0],cy:bar[1],r:11, fill: opts.dash ? 'none' : color, stroke:color,'stroke-width':2.5, opacity}));
+}
+
+function renderStage(t, faultKey, overlay){
+  stage.innerHTML = '';
+  const panelW = 360, gap = 40, leftX = 30, rightX = leftX + panelW + gap;
+  const floorY = 560;
+
+  // floor lines
+  stage.appendChild(el('line', {x1:leftX-15,y1:floorY,x2:leftX+panelW+15,y2:floorY, stroke:'#DEE3D9','stroke-width':2}));
+  stage.appendChild(el('line', {x1:rightX-15,y1:floorY,x2:rightX+panelW+15,y2:floorY, stroke:'#DEE3D9','stroke-width':2}));
+  // divider
+  stage.appendChild(el('line', {x1:leftX+panelW+gap/2,y1:20,x2:leftX+panelW+gap/2,y2:floorY+20, stroke:'#DEE3D9','stroke-width':1}));
+
+  const refPose = computePose(REFERENCE.bottom, REFERENCE.curve, t);
+  const pat = PATTERNS[faultKey];
+  const faultPose = computePose(pat.bottom, pat.curve, t);
+
+  const gLeft = el('g',{}); stage.appendChild(gLeft);
+  drawFigure(gLeft, refPose, leftX+120, COLOR_TEAL, {});
+
+  const gRight = el('g',{}); stage.appendChild(gRight);
+  if (overlay){
+    drawFigure(gRight, refPose, rightX+120, COLOR_GREY, {dash:true, width:3, opacity:0.75});
+  }
+  drawFigure(gRight, faultPose, rightX+120, COLOR_CORAL, {});
+}
+
+// ---- UI wiring ----
+const select = document.getElementById('patternSelect');
+Object.keys(PATTERNS).forEach(key=>{
+  const opt = document.createElement('option');
+  opt.value = key; opt.textContent = PATTERNS[key].label;
+  select.appendChild(opt);
+});
+
+const tSlider = document.getElementById('tSlider');
+const tLabel = document.getElementById('tLabel');
+const playBtn = document.getElementById('playBtn');
+const overlayChk = document.getElementById('overlayChk');
+const overlayLegend = document.getElementById('overlayLegend');
+const rightTitle = document.getElementById('rightTitle');
+const faultColHead = document.getElementById('faultColHead');
+const metricsBody = document.getElementById('metricsBody');
+const expCause = document.getElementById('expCause');
+const expRisk = document.getElementById('expRisk');
+const expCue = document.getElementById('expCue');
+
+let t = 0, playing = false, rafId = null, startTime = null, direction = 1;
+
+function currentFault(){ return select.value; }
+
+function updateAll(){
+  const key = currentFault();
+  const pat = PATTERNS[key];
+  renderStage(t/100, key, overlayChk.checked);
+  tLabel.textContent = Math.round(t) + '%';
+
+  rightTitle.innerHTML = `<b>${pat.short}</b><small>代償模式</small>`;
+  faultColHead.textContent = pat.label;
+
+  metricsBody.innerHTML = '';
+  Object.keys(METRIC_LABELS).forEach(mKey=>{
+    const [refVal, faultVal, isDiff] = pat.metrics[mKey];
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="metric">${METRIC_LABELS[mKey]}</td>
+      <td class="ref">${refVal}</td>
+      <td class="fault${isDiff ? ' diff' : ''}">${faultVal}</td>
+    `;
+    metricsBody.appendChild(tr);
+  });
+
+  expCause.textContent = pat.cause;
+  expRisk.textContent = pat.risk;
+  expCue.textContent = pat.cue;
+}
+
+select.addEventListener('change', updateAll);
+overlayChk.addEventListener('change', ()=>{
+  overlayLegend.style.display = overlayChk.checked ? 'inline-flex' : 'none';
+  updateAll();
+});
+tSlider.addEventListener('input', ()=>{
+  stopPlay();
+  t = Number(tSlider.value);
+  updateAll();
+});
+
+function stopPlay(){
+  playing = false;
+  playBtn.textContent = '▶ 播放下降';
+  if (rafId) cancelAnimationFrame(rafId);
+  startTime = null;
+}
+
+function step(ts){
+  if (!startTime) startTime = ts;
+  const elapsed = ts - startTime;
+  const duration = 1600;
+  let progress = (elapsed / duration);
+  if (direction === -1) progress = 1 - progress;
+  let val = direction === 1 ? progress : progress;
+  t = Math.max(0, Math.min(100, (direction===1 ? progress : (1-progress)) * 100));
+  if (elapsed >= duration){
+    t = direction === 1 ? 100 : 0;
+    tSlider.value = t;
+    updateAll();
+    direction *= -1;
+    startTime = ts;
+    rafId = requestAnimationFrame(step);
+    return;
+  }
+  tSlider.value = t;
+  updateAll();
+  rafId = requestAnimationFrame(step);
+}
+
+playBtn.addEventListener('click', ()=>{
+  if (playing){
+    stopPlay();
+  } else {
+    playing = true;
+    playBtn.textContent = '⏸ 暫停';
+    direction = t >= 100 ? -1 : 1;
+    startTime = null;
+    rafId = requestAnimationFrame(step);
+  }
+});
+
+updateAll();
+</script>
+</body>
+</html>

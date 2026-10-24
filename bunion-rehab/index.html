@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>拇外翻康復訓練指南</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;600;700&family=Zilla+Slab:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDE6D6;
+    --paper-deep:#E2D9C4;
+    --ink:#26302A;
+    --ink-soft:#4B5750;
+    --villain:#A13D2C;
+    --villain-soft:#C97A67;
+    --hero:#3F6E4E;
+    --hero-soft:#7FA98A;
+    --gold:#B9852E;
+    --slate:#4A6670;
+    --card:#F6F1E6;
+    --rule:rgba(38,48,42,0.16);
+    --stage-1:#5C8567;
+    --stage-2:#B9852E;
+    --stage-3:#A13D2C;
+    --stage-4:#4A6670;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Noto Sans TC',sans-serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- Hero ---------- */
+  header.hero{
+    background:
+      radial-gradient(ellipse at 80% -10%, rgba(161,61,44,0.10), transparent 55%),
+      radial-gradient(ellipse at 10% 0%, rgba(74,102,112,0.10), transparent 50%),
+      var(--paper);
+    padding:64px 0 40px;
+    border-bottom:1px solid var(--rule);
+  }
+  .eyebrow{
+    font-family:'Zilla Slab',serif;
+    font-style:italic;
+    font-weight:500;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--villain);
+  }
+  h1{
+    font-family:'Noto Serif TC',serif;
+    font-weight:900;
+    font-size:clamp(34px,6vw,54px);
+    margin:10px 0 6px;
+    letter-spacing:0.01em;
+  }
+  .subtitle{
+    font-family:'Noto Serif TC',serif;
+    font-weight:500;
+    font-size:18px;
+    color:var(--ink-soft);
+    margin:0 0 28px;
+  }
+  .formula{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    align-items:center;
+    font-family:'Noto Serif TC',serif;
+    font-weight:700;
+    font-size:clamp(14px,2.6vw,17px);
+    margin-top:8px;
+  }
+  .chip{
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:9px 14px;
+  }
+  .chip.villain{border-color:rgba(161,61,44,0.4); color:var(--villain);}
+  .chip.hero{border-color:rgba(63,110,78,0.4); color:var(--hero);}
+  .chip.gold{border-color:rgba(185,133,46,0.5); color:var(--gold);}
+  .plus{color:var(--ink-soft); font-weight:500;}
+
+  /* ---------- Section shell ---------- */
+  section{padding:56px 0;border-bottom:1px solid var(--rule);}
+  .sec-head{margin-bottom:30px;}
+  .sec-num{
+    font-family:'Zilla Slab',serif;
+    font-style:italic;
+    color:var(--villain);
+    font-size:14px;
+    letter-spacing:0.1em;
+  }
+  h2{
+    font-family:'Noto Serif TC',serif;
+    font-weight:900;
+    font-size:clamp(24px,4vw,32px);
+    margin:4px 0 0;
+  }
+  p{margin:0 0 14px;}
+  p.lede{color:var(--ink-soft); font-size:16px; max-width:640px;}
+
+  /* ---------- Anatomy / foot diagram ---------- */
+  .anatomy-grid{
+    display:grid;
+    grid-template-columns:minmax(240px,320px) 1fr;
+    gap:36px;
+    align-items:start;
+  }
+  @media (max-width:720px){ .anatomy-grid{grid-template-columns:1fr;} }
+
+  .foot-stage{
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-radius:6px;
+    padding:20px;
+  }
+  svg#foot-svg{width:100%;height:auto;display:block;}
+  .marker{cursor:pointer;}
+  .marker circle.dot{
+    fill:var(--paper);
+    stroke:var(--ink);
+    stroke-width:1.4;
+    transition:fill .18s ease, stroke .18s ease, r .18s ease;
+  }
+  .marker text{
+    font-family:'Zilla Slab',serif;
+    font-weight:700;
+    font-size:11px;
+    fill:var(--ink);
+    pointer-events:none;
+  }
+  .marker.active circle.dot{fill:var(--villain); stroke:var(--villain);}
+  .marker.active text{fill:var(--paper);}
+  .marker:hover circle.dot{stroke-width:2;}
+
+  .muscle-panel{
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-radius:6px;
+    padding:22px 24px;
+    min-height:210px;
+  }
+  .muscle-panel .role{
+    display:inline-block;
+    font-family:'Zilla Slab',serif;
+    font-style:italic;
+    font-size:12px;
+    letter-spacing:0.06em;
+    padding:3px 10px;
+    border-radius:20px;
+    margin-bottom:10px;
+  }
+  .role.villain{background:rgba(161,61,44,0.12); color:var(--villain);}
+  .role.hero{background:rgba(63,110,78,0.12); color:var(--hero);}
+  .role.slate{background:rgba(74,102,112,0.14); color:var(--slate);}
+  .role.gold{background:rgba(185,133,46,0.16); color:var(--gold);}
+  .muscle-panel h3{
+    font-family:'Noto Serif TC',serif;
+    font-size:21px;
+    margin:0 0 8px;
+  }
+  .muscle-panel .func{font-weight:600; margin-bottom:6px;}
+  .muscle-panel .handle{color:var(--ink-soft); font-size:14.5px;}
+  .muscle-hint{font-size:13px; color:var(--ink-soft); margin-top:14px;}
+
+  /* ---------- Stage cards ---------- */
+  .stage-card{
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-left:6px solid var(--stage-1);
+    border-radius:4px;
+    margin-bottom:16px;
+    overflow:hidden;
+  }
+  .stage-card[data-stage="2"]{border-left-color:var(--stage-2);}
+  .stage-card[data-stage="3"]{border-left-color:var(--stage-3);}
+  .stage-card[data-stage="4"]{border-left-color:var(--stage-4);}
+
+  .stage-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:18px 22px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .stage-title{display:flex; align-items:baseline; gap:12px;}
+  .stage-badge{
+    font-family:'Zilla Slab',serif;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:0.08em;
+    color:var(--stage-1);
+  }
+  .stage-card[data-stage="2"] .stage-badge{color:var(--stage-2);}
+  .stage-card[data-stage="3"] .stage-badge{color:var(--stage-3);}
+  .stage-card[data-stage="4"] .stage-badge{color:var(--stage-4);}
+  .stage-head h3{
+    font-family:'Noto Serif TC',serif;
+    font-size:19px;
+    margin:0;
+  }
+  .chevron{
+    width:11px;height:11px;
+    border-right:2px solid var(--ink-soft);
+    border-bottom:2px solid var(--ink-soft);
+    transform:rotate(45deg);
+    transition:transform .2s ease;
+    flex-shrink:0;
+  }
+  .stage-card.open .chevron{transform:rotate(-135deg);}
+  .stage-body{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .28s ease;
+  }
+  .stage-card.open .stage-body{max-height:520px;}
+  .stage-body-inner{padding:0 22px 22px;}
+  .stage-body-inner ul{margin:0; padding-left:20px;}
+  .stage-body-inner li{margin-bottom:10px;}
+  .key-move{
+    background:rgba(0,0,0,0.03);
+    border-radius:4px;
+    padding:14px 16px;
+    margin-top:12px;
+    font-size:14.5px;
+  }
+  .key-move .kicker{
+    font-family:'Zilla Slab',serif; font-style:italic; font-weight:700;
+    color:var(--stage-3); font-size:12px; letter-spacing:0.05em;
+    display:block; margin-bottom:6px;
+  }
+
+  /* ---------- Windlass diagram ---------- */
+  .windlass-wrap{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:32px;
+    align-items:center;
+  }
+  @media (max-width:720px){ .windlass-wrap{grid-template-columns:1fr;} }
+  .windlass-diagram{
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-radius:6px;
+    padding:20px;
+  }
+  .flow{display:flex; flex-direction:column; gap:0;}
+  .flow-step{
+    display:flex; align-items:center; gap:12px;
+    font-size:14.5px; padding:8px 0;
+  }
+  .flow-step .fnum{
+    font-family:'Zilla Slab',serif; font-weight:700; font-size:13px;
+    color:var(--paper); background:var(--slate);
+    width:22px;height:22px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .flow-arrow{
+    margin-left:11px; color:var(--ink-soft); font-size:14px;
+  }
+  .callout{
+    background:rgba(161,61,44,0.08);
+    border-left:3px solid var(--villain);
+    padding:12px 16px;
+    border-radius:0 4px 4px 0;
+    font-size:14.5px;
+    margin-top:16px;
+  }
+
+  /* ---------- Avoid list ---------- */
+  .avoid-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media (max-width:640px){ .avoid-grid{grid-template-columns:1fr;} }
+  .avoid-item{
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-radius:5px;
+    padding:16px 18px;
+    display:flex; gap:12px;
+  }
+  .avoid-x{
+    font-family:'Zilla Slab',serif; font-weight:700;
+    color:var(--villain); font-size:18px; flex-shrink:0;
+    line-height:1.5;
+  }
+  .avoid-item p{margin:0; font-size:14.5px;}
+  .avoid-item .avoid-title{font-weight:700; margin-bottom:3px; display:block;}
+
+  /* ---------- SOP checklist ---------- */
+  .sop-list{list-style:none; margin:0; padding:0;}
+  .sop-item{
+    display:flex; gap:16px; align-items:flex-start;
+    padding:16px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  .sop-item:last-child{border-bottom:none;}
+  .sop-check{
+    width:24px;height:24px;
+    border:2px solid var(--ink-soft);
+    border-radius:50%;
+    flex-shrink:0;
+    cursor:pointer;
+    margin-top:2px;
+    position:relative;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .sop-check.done{background:var(--hero); border-color:var(--hero);}
+  .sop-check.done::after{
+    content:'';
+    position:absolute; left:7px; top:3px;
+    width:6px;height:11px;
+    border-right:2px solid var(--paper);
+    border-bottom:2px solid var(--paper);
+    transform:rotate(45deg);
+  }
+  .sop-text{flex:1;}
+  .sop-time{
+    font-family:'Zilla Slab',serif; font-style:italic; font-weight:700;
+    color:var(--gold); font-size:12.5px; letter-spacing:0.04em;
+  }
+  .sop-item h4{
+    font-family:'Noto Serif TC',serif;
+    font-size:16.5px; margin:2px 0 4px;
+  }
+  .sop-item p{margin:0; color:var(--ink-soft); font-size:14.5px;}
+  .sop-item.done h4, .sop-item.done p{color:var(--ink-soft); text-decoration:line-through; text-decoration-color:rgba(38,48,42,0.35);}
+  .sop-reset{
+    margin-top:18px;
+    font-family:'Noto Sans TC',sans-serif;
+    font-size:13px;
+    background:none;
+    border:1px solid var(--rule);
+    border-radius:20px;
+    padding:7px 16px;
+    cursor:pointer;
+    color:var(--ink-soft);
+  }
+  .sop-reset:hover{border-color:var(--ink-soft);}
+
+  /* ---------- Footer summary ---------- */
+  footer{padding:50px 0 70px;}
+  .summary-card{
+    background:var(--ink);
+    color:var(--paper);
+    border-radius:8px;
+    padding:34px 32px;
+  }
+  .summary-card .eyebrow{color:var(--villain-soft);}
+  .summary-card p{
+    font-family:'Noto Serif TC',serif;
+    font-size:clamp(17px,2.6vw,20px);
+    font-weight:500;
+    margin:10px 0 0;
+    line-height:1.85;
+  }
+  .summary-card b{color:var(--gold);}
+
+  ::selection{background:var(--gold); color:var(--paper);}
+  :focus-visible{outline:2px solid var(--slate); outline-offset:2px;}
+</style>
+</head>
+<body>
+<a href="../" style="position:fixed;top:12px;left:12px;z-index:9999;font:700 14px 'Noto Sans TC',sans-serif;background:rgba(38,48,42,.88);color:#fff;text-decoration:none;padding:8px 14px;border-radius:999px;">← 教材總庫</a>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Hallux Valgus · Corrective Training</div>
+    <h1>拇外翻康復訓練</h1>
+    <p class="subtitle">底層邏輯與完整操作指南</p>
+    <div class="formula">
+      <span class="chip villain">放鬆內收肌</span>
+      <span class="plus">+</span>
+      <span class="chip hero">強化外展肌／屈肌</span>
+      <span class="plus">+</span>
+      <span class="chip gold">優化絞盤機制</span>
+    </div>
+  </div>
+</header>
+
+<section id="anatomy">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">01 — 解剖判讀</div>
+      <h2>誰在搞破壞，誰該出力</h2>
+      <p class="lede">點選腳掌上的標記，看每條肌肉在拇外翻裡扮演的角色與對應處理方式。</p>
+    </div>
+
+    <div class="anatomy-grid">
+      <div class="foot-stage">
+        <svg id="foot-svg" viewBox="0 0 240 330" aria-label="足部肌肉標記圖">
+          <!-- foot body (right foot, top-down, toes up) -->
+          <path d="M100 322
+                   C55 322 34 282 37 232
+                   C39 190 54 172 51 145
+                   C49 118 63 96 84 88
+                   L118 88
+                   C152 88 176 108 183 138
+                   C189 165 205 182 202 225
+                   C199 268 173 322 100 322 Z"
+                fill="var(--paper-deep)" stroke="var(--ink)" stroke-width="1.5" opacity="0.9"/>
+          <!-- big toe -->
+          <ellipse cx="96" cy="48" rx="23" ry="31" fill="var(--paper-deep)" stroke="var(--ink)" stroke-width="1.5"/>
+          <!-- other toes -->
+          <ellipse cx="146" cy="58" rx="13" ry="18" fill="var(--paper-deep)" stroke="var(--ink)" stroke-width="1.2"/>
+          <ellipse cx="170" cy="72" rx="12" ry="16" fill="var(--paper-deep)" stroke="var(--ink)" stroke-width="1.2"/>
+          <ellipse cx="189" cy="92" rx="10" ry="14" fill="var(--paper-deep)" stroke="var(--ink)" stroke-width="1.2"/>
+          <ellipse cx="202" cy="115" rx="9" ry="12" fill="var(--paper-deep)" stroke="var(--ink)" stroke-width="1.2"/>
+          <!-- deviation guide line (valgus angle) -->
+          <line x1="96" y1="48" x2="130" y2="110" stroke="var(--villain)" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+
+          <!-- markers -->
+          <g class="marker" data-muscle="extensor" transform="translate(96,32)">
+            <circle class="dot" r="13"/><text x="0" y="4" text-anchor="middle">伸</text>
+          </g>
+          <g class="marker" data-muscle="interosseous" transform="translate(128,80)">
+            <circle class="dot" r="13"/><text x="0" y="4" text-anchor="middle">間</text>
+          </g>
+          <g class="marker" data-muscle="adductor" transform="translate(118,120)">
+            <circle class="dot" r="13"/><text x="0" y="4" text-anchor="middle">收</text>
+          </g>
+          <g class="marker" data-muscle="abductor" transform="translate(58,120)">
+            <circle class="dot" r="13"/><text x="0" y="4" text-anchor="middle">展</text>
+          </g>
+          <g class="marker" data-muscle="flexor" transform="translate(95,190)">
+            <circle class="dot" r="13"/><text x="0" y="4" text-anchor="middle">屈</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="muscle-panel" id="muscle-panel">
+        <!-- filled by JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stages">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">02 — 訓練動作庫</div>
+      <h2>由淺入深，四個階段</h2>
+      <p class="lede">點開每個階段查看動作細節。順序很重要：先解綁，再對齊，後加固。</p>
+    </div>
+
+    <div class="stage-card" data-stage="1">
+      <div class="stage-head" role="button" tabindex="0">
+        <div class="stage-title">
+          <span class="stage-badge">STAGE 01</span>
+          <h3>放鬆與解綁（優先級最高）</h3>
+        </div>
+        <span class="chevron"></span>
+      </div>
+      <div class="stage-body">
+        <div class="stage-body-inner">
+          <ul>
+            <li><b>滾壓斜頭：</b>筋膜球或網球放在腳底第二、三蹠骨根部（腳掌中心偏內側），體重壓上，微痛滾動 2 分鐘。</li>
+            <li><b>撥動橫頭：</b>用手指深入大腳趾與第二趾之間的腳背縫隙，用力向下按壓並橫向撥動肌腱。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-card" data-stage="2">
+      <div class="stage-head" role="button" tabindex="0">
+        <div class="stage-title">
+          <span class="stage-badge">STAGE 02</span>
+          <h3>水平矯正（王牌動作）</h3>
+        </div>
+        <span class="chevron"></span>
+      </div>
+      <div class="stage-body">
+        <div class="stage-body-inner">
+          <ul>
+            <li><b>腳趾「布」：</b>用力將所有腳趾向外張開，特別專注把大腳趾遠離第二趾，感受腳趾縫的撕扯感。</li>
+            <li><b>手動輔助外展：</b>坐姿，用手將大腳趾用力掰向外側，保持 30 秒，隨時可做的被動拉伸。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-card" data-stage="3">
+      <div class="stage-head" role="button" tabindex="0">
+        <div class="stage-title">
+          <span class="stage-badge">STAGE 03</span>
+          <h3>垂直穩定與絞盤啟動（複合黃金動作）</h3>
+        </div>
+        <span class="chevron"></span>
+      </div>
+      <div class="stage-body">
+        <div class="stage-body-inner">
+          <div class="key-move">
+            <span class="kicker">「壓根推尖」法 — 最精華動作</span>
+            1. 先用手將大腳趾掰正（外展至中立位）。<br>
+            2. 保持正位，用大腳趾根部（蹠骨頭）用力向下壓地面。<br>
+            3. 關鍵：壓根時腳趾尖絕對不能蜷縮，要放鬆或微微上翹；同時趾尖主動向第二趾的反方向頂。<br>
+            此動作同時訓練拇短屈肌（壓根）與骨間背側肌（推尖），是啟動絞盤機制的最短路徑。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-card" data-stage="4">
+      <div class="stage-head" role="button" tabindex="0">
+        <div class="stage-title">
+          <span class="stage-badge">STAGE 04</span>
+          <h3>輔助訓練</h3>
+        </div>
+        <span class="chevron"></span>
+      </div>
+      <div class="stage-body">
+        <div class="stage-body-inner">
+          <ul>
+            <li><b>抬 + 撐組合：</b>大腳趾向上翹的同時，主動施加向外撐開的力，像剪刀一樣。可搭配分趾器（矽膠墊）同時進行，效果加倍。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="windlass">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">03 — 生物力學</div>
+      <h2>足底絞盤機制 Windlass</h2>
+    </div>
+    <div class="windlass-wrap">
+      <div class="windlass-diagram">
+        <div class="flow">
+          <div class="flow-step"><span class="fnum">1</span> 大腳趾上翹（或根部下沉）</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-step"><span class="fnum">2</span> 足底筋膜被拉緊</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-step"><span class="fnum">3</span> 足弓升高</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-step"><span class="fnum">4</span> 腳底變為「硬槓桿」以支撐體重</div>
+        </div>
+      </div>
+      <div>
+        <p><b>核心重點：</b>絞盤機制要發揮作用，大腳趾必須處於正位（不歪斜）。若大腳趾外翻，筋膜拉力線會歪向第二趾，啟動絞盤反而會加重畸形。</p>
+        <div class="callout">訓練應用：先水平推正（練骨間肌），再垂直加壓（練屈肌）——順序錯了，等於在幫倒忙。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="avoid">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">04 — 避坑指南</div>
+      <h2>六件絕對不要做的事</h2>
+    </div>
+    <div class="avoid-grid">
+      <div class="avoid-item"><span class="avoid-x">✕</span><p><span class="avoid-title">只練「抬」</span>單純拼命勾腳尖練伸肌，收縮帶有內收力，等同幫倒忙。</p></div>
+      <div class="avoid-item"><span class="avoid-x">✕</span><p><span class="avoid-title">歪斜時發力</span>大腳趾歪著時練下壓，拇短屈肌會把腳趾拉得更歪，務必先手動掰正。</p></div>
+      <div class="avoid-item"><span class="avoid-x">✕</span><p><span class="avoid-title">硬練足弓上提</span>若短足運動做不出來或腳抽筋，果斷放棄，改用根部下壓被動觸發。</p></div>
+      <div class="avoid-item"><span class="avoid-x">✕</span><p><span class="avoid-title">穿窄頭鞋、高跟鞋</span>鞋頭空間不足是最大惡化因素，跟高勿超過 2.5 公分。</p></div>
+      <div class="avoid-item"><span class="avoid-x">✕</span><p><span class="avoid-title">練到劇痛</span>所有訓練以微酸、輕微牽拉感為限，劇痛立即停止。</p></div>
+      <div class="avoid-item"><span class="avoid-x">✕</span><p><span class="avoid-title">忽視扁平足</span>若合併扁平足，須同步處理足弓支撐（如鞋墊），否則矯正效果打折。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="sop">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">05 — 每日執行</div>
+      <h2>SOP 打勾清單</h2>
+      <p class="lede">點圓圈標記完成，重新整理頁面即會重置，方便每天重複使用。</p>
+    </div>
+    <ul class="sop-list" id="sop-list">
+      <li class="sop-item">
+        <span class="sop-check" role="checkbox" aria-checked="false"></span>
+        <div class="sop-text">
+          <span class="sop-time">5 分鐘</span>
+          <h4>熱身放鬆</h4>
+          <p>踩筋膜球滾壓腳底中段，放鬆拇收肌斜頭。</p>
+        </div>
+      </li>
+      <li class="sop-item">
+        <span class="sop-check" role="checkbox" aria-checked="false"></span>
+        <div class="sop-text">
+          <span class="sop-time">3 分鐘</span>
+          <h4>被動歸位</h4>
+          <p>坐著用手將大腳趾使勁向外掰開，每次維持 30 秒，做 3–5 次。</p>
+        </div>
+      </li>
+      <li class="sop-item">
+        <span class="sop-check" role="checkbox" aria-checked="false"></span>
+        <div class="sop-text">
+          <span class="sop-time">5 分鐘</span>
+          <h4>主動矯正</h4>
+          <p>手動掰正腳趾後，做「壓根推尖」動作，保持 5 秒、重複 15 次，共 3 組。</p>
+        </div>
+      </li>
+      <li class="sop-item">
+        <span class="sop-check" role="checkbox" aria-checked="false"></span>
+        <div class="sop-text">
+          <span class="sop-time">2 分鐘</span>
+          <h4>輔助強化</h4>
+          <p>做 10 次「抬 + 撐開」的剪刀腳動作。</p>
+        </div>
+      </li>
+      <li class="sop-item">
+        <span class="sop-check" role="checkbox" aria-checked="false"></span>
+        <div class="sop-text">
+          <span class="sop-time">全天</span>
+          <h4>日常穿戴</h4>
+          <p>走路盡量穿寬頭鞋；靜止休息或睡覺時可搭配分趾器維持被動外展角度。</p>
+        </div>
+      </li>
+    </ul>
+    <button class="sop-reset" id="sop-reset">重置清單</button>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="summary-card">
+      <div class="eyebrow">總結一句話</div>
+      <p>拇外翻康復的黃金順序是——<b>先解綁</b>（放鬆拇收肌），<b>再對齊</b>（練骨間肌），<b>後加固</b>（啟動絞盤）。若動作做不出來，優先回頭加強被動拉伸與放鬆，這是最容易被忽略的關鍵。</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const muscleData = {
+    adductor: {
+      role: 'villain', roleLabel: '頭號反派',
+      name: '拇收肌（橫頭／斜頭）',
+      func: '把大腳趾「拉向」第二趾（內收），是畸形的直接元兇。',
+      handle: '處理方式：放鬆 / 拉伸 — 用球滾壓腳底、撥動腳背縫隙。'
+    },
+    abductor: {
+      role: 'hero', roleLabel: '正義元帥',
+      name: '拇展肌',
+      func: '把大腳趾「拉離」第二趾（外展），並撐起內側足弓。',
+      handle: '處理方式：強化 — 腳趾「布」的動作、足弓上提輔助。'
+    },
+    interosseous: {
+      role: 'slate', roleLabel: '精準狙擊手',
+      name: '骨間背側肌（第一背側）',
+      func: '水平面將大腳趾尖端推離第二趾，決定「張開」的徹底程度。',
+      handle: '處理方式：強化 — 感覺腳趾縫「撕開」的發力。'
+    },
+    flexor: {
+      role: 'gold', roleLabel: '地基工程師',
+      name: '拇短屈肌',
+      func: '將大腳趾根部（第一蹠骨頭）向下壓，穩定關節並被動啟動絞盤。',
+      handle: '處理方式：強化 — 根部下壓地面，趾尖放鬆。'
+    },
+    extensor: {
+      role: 'slate', roleLabel: '輔助配角',
+      name: '拇長／短伸肌',
+      func: '負責「上抬」腳趾（背屈）。單獨練效果有限，且收縮時有內收副作用。',
+      handle: '處理方式：輔助訓練 — 必須配合「外展」力一起做。'
+    }
+  };
+
+  const panel = document.getElementById('muscle-panel');
+  const markers = document.querySelectorAll('.marker');
+
+  function renderMuscle(key){
+    const m = muscleData[key];
+    panel.innerHTML = `
+      <span class="role ${m.role}">${m.roleLabel}</span>
+      <h3>${m.name}</h3>
+      <div class="func">${m.func}</div>
+      <div class="handle">${m.handle}</div>
+    `;
+    markers.forEach(mk => mk.classList.toggle('active', mk.dataset.muscle === key));
+  }
+
+  markers.forEach(mk => {
+    mk.addEventListener('click', () => renderMuscle(mk.dataset.muscle));
+  });
+
+  renderMuscle('adductor');
+
+  // Stage accordion
+  document.querySelectorAll('.stage-head').forEach(head => {
+    function toggle(){
+      const card = head.closest('.stage-card');
+      const wasOpen = card.classList.contains('open');
+      document.querySelectorAll('.stage-card.open').forEach(c => c.classList.remove('open'));
+      if(!wasOpen) card.classList.add('open');
+    }
+    head.addEventListener('click', toggle);
+    head.addEventListener('keydown', e => {
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+  document.querySelector('.stage-card[data-stage="3"]').classList.add('open');
+
+  // SOP checklist
+  document.querySelectorAll('.sop-check').forEach(chk => {
+    chk.addEventListener('click', () => {
+      const item = chk.closest('.sop-item');
+      const done = !chk.classList.contains('done');
+      chk.classList.toggle('done', done);
+      item.classList.toggle('done', done);
+      chk.setAttribute('aria-checked', done);
+    });
+  });
+  document.getElementById('sop-reset').addEventListener('click', () => {
+    document.querySelectorAll('.sop-check').forEach(chk => {
+      chk.classList.remove('done');
+      chk.setAttribute('aria-checked', 'false');
+      chk.closest('.sop-item').classList.remove('done');
+    });
+  });
+</script>
+
+</body>
+</html>
+

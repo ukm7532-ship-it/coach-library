@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lewin 教練教材總庫</title>
+<meta name="description" content="Lewin 教練的運動教材總庫：復健訓練、動作教學與觀念圖解，給學員與長輩的互動式學習網頁。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EDE6D6;
+    --card: #F8F4EA;
+    --ink: #26302A;
+    --ink-soft: #5A6560;
+    --line: #DCD2BC;
+    --accent: #3F6E4E;
+    --accent-soft: #DCE8DF;
+    --gold: #B9852E;
+    --muted-card: #E6DECB;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1C211E;
+      --card: #252C28;
+      --ink: #ECE7DC;
+      --ink-soft: #A9B2AC;
+      --line: #36403A;
+      --accent: #8DBB9A;
+      --accent-soft: #2E3D33;
+      --gold: #D9AE62;
+      --muted-card: #212723;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #1C211E;
+    --card: #252C28;
+    --ink: #ECE7DC;
+    --ink-soft: #A9B2AC;
+    --line: #36403A;
+    --accent: #8DBB9A;
+    --accent-soft: #2E3D33;
+    --gold: #D9AE62;
+    --muted-card: #212723;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Sans TC', sans-serif;
+    line-height: 1.7;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 40px 16px 64px; }
+
+  header .eyebrow {
+    font-size: 14px; letter-spacing: .12em; color: var(--gold); font-weight: 700;
+  }
+  header h1 {
+    font-family: 'Noto Serif TC', serif; font-weight: 900;
+    font-size: clamp(30px, 7vw, 44px); line-height: 1.25; margin: 6px 0 10px;
+  }
+  header p { margin: 0; color: var(--ink-soft); font-size: 17px; max-width: 34em; }
+
+  .search {
+    margin: 28px 0 14px; position: relative;
+  }
+  .search input {
+    width: 100%; font: inherit; font-size: 17px; color: var(--ink);
+    padding: 13px 16px 13px 44px; border-radius: 14px;
+    border: 1.5px solid var(--line); background: var(--card);
+  }
+  .search input:focus { outline: none; border-color: var(--accent); }
+  .search svg { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--ink-soft); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+  .chip {
+    font: inherit; font-size: 16px; font-weight: 500; cursor: pointer;
+    padding: 8px 16px; border-radius: 999px; min-height: 44px;
+    border: 1.5px solid var(--line); background: transparent; color: var(--ink);
+  }
+  .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+
+  section.group { margin-bottom: 34px; }
+  section.group h2 {
+    font-size: 20px; font-weight: 700; margin: 0 0 12px;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  section.group h2 small { font-size: 14px; color: var(--ink-soft); font-weight: 400; }
+
+  .grid { display: grid; gap: 12px; grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+  a.card {
+    display: block; text-decoration: none; color: inherit;
+    background: var(--card); border: 1.5px solid var(--line); border-radius: 16px;
+    padding: 18px 18px 16px; transition: border-color .15s, transform .15s;
+  }
+  a.card:hover, a.card:focus-visible { border-color: var(--accent); transform: translateY(-2px); outline: none; }
+  .card h3 { font-size: 19px; margin: 8px 0 4px; line-height: 1.4; }
+  .card p { margin: 0; color: var(--ink-soft); font-size: 15.5px; }
+  .card .go { margin-top: 12px; font-size: 15px; font-weight: 700; color: var(--accent); }
+  .tag {
+    display: inline-block; font-size: 13px; font-weight: 700;
+    padding: 2px 10px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent);
+  }
+  .soon {
+    border: 1.5px dashed var(--line); border-radius: 16px; padding: 18px;
+    color: var(--ink-soft); font-size: 15.5px; background: var(--muted-card);
+  }
+  .empty { color: var(--ink-soft); padding: 24px 0; display: none; }
+
+  footer {
+    margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
+    font-size: 14px; color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">LEWIN COACH LIBRARY</div>
+    <h1>教材總庫</h1>
+    <p>復健訓練、動作教學與觀念圖解。點選想看的主題，在家也能照著練。</p>
+  </header>
+
+  <div class="search">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="q" type="search" placeholder="搜尋：膝蓋、深蹲、拇外翻" aria-label="搜尋教材">
+  </div>
+
+  <div class="chips" id="chips" role="group" aria-label="依部位篩選"></div>
+
+  <main id="list"></main>
+  <p class="empty" id="empty">找不到符合的教材，換個關鍵字試試看。</p>
+
+  <footer>
+    內容僅供運動教學參考。如有疼痛持續或加劇，請先就醫評估。<br>
+    © Lewin 教練
+  </footer>
+</div>
+
+<script>
+/* ================================================================
+   教材清單：新增教材時，只要在這裡加一筆，並把網頁放進同名資料夾。
+   part 必須是下方 PARTS 其中一個。
+   ================================================================ */
+const MATERIALS = [
+  {
+    title: "拇外翻康復訓練指南",
+    desc: "四個階段由淺入深，搞懂足底絞盤機制，附 SOP 打勾清單與六個絕對不要做的事。",
+    part: "足踝",
+    type: "復健訓練",
+    href: "bunion-rehab/",
+    keywords: "拇外翻 拇趾外翻 腳 足弓 絞盤 復健"
+  },
+  {
+    title: "硬舉動作模式比較",
+    desc: "髖關節主導與常見代償模式的差別，看懂你的硬舉是誰在出力。",
+    part: "髖與腰背",
+    type: "動作教學",
+    href: "deadlift-patterns/",
+    keywords: "硬舉 髖關節 髖鉸鏈 下背 代償 腰痠"
+  }
+];
+
+const PARTS = ["足踝", "膝", "髖與腰背", "肩"];
+
+const list = document.getElementById("list");
+const chips = document.getElementById("chips");
+const q = document.getElementById("q");
+const empty = document.getElementById("empty");
+let active = "全部";
+
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+function renderChips() {
+  chips.innerHTML = ["全部", ...PARTS].map(p =>
+    `<button class="chip" type="button" aria-pressed="${p === active}" data-p="${esc(p)}">${esc(p)}</button>`
+  ).join("");
+}
+
+function render() {
+  const term = q.value.trim().toLowerCase();
+  const searching = term.length > 0;
+  let shown = 0;
+  let html = "";
+
+  for (const part of PARTS) {
+    if (active !== "全部" && active !== part) continue;
+    const items = MATERIALS.filter(m => m.part === part && (!searching ||
+      (m.title + m.desc + m.type + m.keywords + m.part).toLowerCase().includes(term)));
+
+    if (searching && items.length === 0) continue;
+    shown += items.length;
+
+    const cards = items.length
+      ? items.map(m => `
+          <a class="card" href="${esc(m.href)}">
+            <span class="tag">${esc(m.type)}</span>
+            <h3>${esc(m.title)}</h3>
+            <p>${esc(m.desc)}</p>
+            <div class="go">開始閱讀 →</div>
+          </a>`).join("")
+      : `<div class="soon">這個部位的教材準備中，敬請期待。</div>`;
+
+    html += `
+      <section class="group">
+        <h2>${esc(part)} <small>${items.length ? items.length + " 份教材" : ""}</small></h2>
+        <div class="grid">${cards}</div>
+      </section>`;
+  }
+
+  list.innerHTML = html;
+  empty.style.display = searching && shown === 0 ? "block" : "none";
+}
+
+chips.addEventListener("click", e => {
+  const b = e.target.closest(".chip");
+  if (!b) return;
+  active = b.dataset.p;
+  renderChips();
+  render();
+});
+q.addEventListener("input", render);
+
+renderChips();
+render();
+</script>
+</body>
+</html>
